@@ -1,0 +1,459 @@
+/*
+ * BELORAE CONFEITARIA SAUDÁVEL - CSS
+ * Reconstruído seguindo SPEC.md seção 6 (Design System)
+ * Mobile-first, responsivo de 375px a 1440px
+ */
+
+/* ===== DESIGN SYSTEM - Paleta de cores (SPEC.md 6.1) ===== */
+:root {
+  --cor-fundo: #FAF6EE;
+  --cor-primaria: #6E8763;
+  --cor-primaria-escura: #4F6647;
+  --cor-texto: #3E2F22;
+  --cor-acento: #C98A63;
+  --cor-branco: #FFFFFF;
+
+  --fonte-titulo: Georgia, 'Times New Roman', serif;
+  --fonte-corpo: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --raio: 12px;
+  --sombra: 0 8px 24px rgba(62, 47, 34, 0.1);
+}
+
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:focus {
+  outline: 2px solid var(--cor-acento);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  box-shadow: 0 6px 16px rgba(110, 135, 99, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--cor-primaria-escura);
+  border: 2px solid var(--cor-primaria);
+}
+
+.btn-secondary:hover {
+  background: rgba(110, 135, 99, 0.05);
+}
+
+.btn-light {
+  background: var(--cor-branco);
+  color: var(--cor-primaria-escura);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-light:hover {
+  background: var(--cor-branco);
+  opacity: 0.9;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--cor-fundo);
+  border-bottom: 1px solid rgba(62, 47, 34, 0.1);
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  height: 2.5rem;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--cor-primaria-escura);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin-bottom: 1.25rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(62, 47, 34, 0.8);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== PRODUTOS ===== */
+.produtos {
+  padding: 4rem 1.5rem;
+}
+
+.produtos-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.produtos h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: var(--cor-branco);
+  border-radius: var(--raio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(62, 47, 34, 0.15);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.product-card h3 {
+  padding: 1rem 1rem 0.5rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.product-card p {
+  padding: 0 1rem 1rem;
+  font-size: 0.9rem;
+  color: rgba(62, 47, 34, 0.7);
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* ===== ABOUT ===== */
+.about {
+  padding: 4rem 1.5rem;
+  background: var(--cor-branco);
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  display: block;
+}
+
+.about-text h2 {
+  margin-bottom: 1rem;
+}
+
+.founder-name {
+  font-size: 0.9rem;
+  color: var(--cor-acento);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  color: rgba(62, 47, 34, 0.8);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* ===== CARDÁPIO ===== */
+.cardapio-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.cardapio-section h2 {
+  margin-bottom: 1rem;
+}
+
+.cardapio-section p {
+  margin-bottom: 2rem;
+  color: rgba(62, 47, 34, 0.75);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== CTA FINAL ===== */
+.cta-final {
+  padding: 5rem 1.5rem;
+  background: var(--cor-primaria-escura);
+  color: var(--cor-branco);
+  text-align: center;
+}
+
+.cta-final h2 {
+  color: var(--cor-branco);
+  margin-bottom: 1rem;
+}
+
+.cta-final p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 2rem 1.5rem;
+  background: var(--cor-branco);
+  border-top: 1px solid rgba(62, 47, 34, 0.1);
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer-brand {
+  color: var(--cor-texto);
+  font-weight: 600;
+}
+
+.footer-location {
+  color: rgba(62, 47, 34, 0.7);
+}
+
+.footer-instagram {
+  color: var(--cor-primaria-escura);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.footer-instagram:hover {
+  opacity: 0.7;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 640px) {
+  .nav {
+    display: none;
+  }
+
+  .header-content {
+    padding: 1rem 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-content {
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .produtos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header-content {
+    padding: 1.25rem 2rem;
+  }
+
+  .hero {
+    padding: 6rem 2rem 5rem;
+  }
+
+  .produtos,
+  .about,
+  .cardapio-section,
+  .cta-final,
+  .footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .produtos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero {
+    padding: 7rem 2rem 6rem;
+  }
+
+  .produtos {
+    padding: 5rem 2rem;
+  }
+
+  .about {
+    padding: 5rem 2rem;
+  }
+
+  .cta-final {
+    padding: 6rem 2rem;
+  }
+}
+}
+
+/* Foco visível para navegação por teclado */
+:focus-visible {
+  outline: 3px solid var(--cor-acento);
+  outline-offset: 2px;
+}
