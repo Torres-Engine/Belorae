@@ -47,13 +47,17 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2.125rem, 5vw, 3.2rem);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
   margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 2.4rem);
-  margin-bottom: 2rem;
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
@@ -161,10 +165,11 @@ p {
 }
 
 .hero p {
-  font-size: 1.05rem;
+  font-size: 1.125rem;
   color: rgba(62, 47, 34, 0.8);
-  margin-bottom: 2.5rem;
   line-height: 1.7;
+  max-width: 34em;
+  margin: 0 auto;
 }
 
 /* ===== PRODUTOS ===== */
@@ -241,8 +246,9 @@ p {
 
 .about-image {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
+  object-position: 50% 100%;
   border-radius: var(--raio);
   box-shadow: var(--sombra);
   display: block;
@@ -331,12 +337,26 @@ p {
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 640px) {
-  .nav {
-    display: none;
+  .header-content {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
   }
 
-  .header-content {
-    padding: 1rem 1rem;
+  .nav {
+    display: flex;
+    gap: 1.25rem;
+    flex-grow: 0;
+  }
+
+  .nav a {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .logo {
+    height: 2rem;
   }
 
   .btn {
