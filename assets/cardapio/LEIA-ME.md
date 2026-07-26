@@ -6,7 +6,7 @@ Coloque aqui o arquivo do cardápio com o nome exato:
 cardapio-belorae.pdf
 ```
 
-O botão "Abrir Cardápio (PDF)" do site e a mensagem automática do WhatsApp já apontam para esse nome de arquivo — não é preciso mexer em código, só substituir o PDF.
+O botão único do site, "Ver Cardápio", já aponta para esse nome de arquivo — não é preciso mexer em código, só substituir o PDF. O link de WhatsApp com mensagem pronta não fica mais no site: ele vive no rodapé do próprio PDF (gerado pelo script `gerar_cardapio.py`, ver abaixo).
 
 **Dica de conteúdo do PDF:** nome do produto, descrição curta, preço, e se possível uma foto pequena de cada item. Manter o arquivo leve (menos de 5MB) para abrir rápido no celular.
 

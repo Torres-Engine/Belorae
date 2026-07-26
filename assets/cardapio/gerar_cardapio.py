@@ -12,7 +12,9 @@ from reportlab.platypus import (
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT
 
-PROJETO = "/sessions/zen-nifty-mendel/mnt/Belorae Start R0"
+DIRETORIO_SCRIPT = os.path.dirname(os.path.abspath(__file__))
+# O script mora em assets/cardapio/, entao a raiz do projeto fica dois niveis acima
+PROJETO = os.path.dirname(os.path.dirname(DIRETORIO_SCRIPT))
 SELO = f"{PROJETO}/assets/logo/belorae-selo-circular.jpg"
 SAIDA = f"{PROJETO}/assets/cardapio/cardapio-belorae.pdf"
 
@@ -44,6 +46,11 @@ desc_style = ParagraphStyle("Desc", fontName="BeloraeSerif-Italic", fontSize=8.7
     textColor=colors.HexColor("#6B5A48"), alignment=TA_LEFT, leading=11)
 footer_style = ParagraphStyle("Footer", fontName="BeloraeSerif-Italic", fontSize=9.5,
     textColor=TEXTO, alignment=TA_CENTER, leading=13)
+footer_link_style = ParagraphStyle("FooterLink", fontName="BeloraeSerif-Bold", fontSize=9.5,
+    textColor=ACENTO, alignment=TA_CENTER, leading=13)
+
+# Link de WhatsApp usado no rodape do PDF
+LINK_WHATSAPP = "https://wa.me/5541996123682?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Belorae%20e%20quero%20fazer%20um%20pedido."
 
 # (nome, descricao, preco, caminho_da_foto_relativo_ao_projeto_ou_None)
 CARDAPIO = [
@@ -184,6 +191,10 @@ def build():
     story.append(Paragraph(
         "Belorae Confeitaria Saudável. Rio Negro, PR. Atendemos Mafra e região. Pedidos via WhatsApp.",
         footer_style,
+    ))
+    story.append(Paragraph(
+        f'<link href="{LINK_WHATSAPP}"><u>Fazer pedido pelo WhatsApp</u></link>',
+        footer_link_style,
     ))
 
     doc.build(story, onFirstPage=fundo_pagina, onLaterPages=fundo_pagina)

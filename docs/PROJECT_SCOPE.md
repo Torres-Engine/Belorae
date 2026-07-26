@@ -10,8 +10,8 @@ Pessoas buscando doces/confeitaria com apelo saudável (sem glúten, sem açúca
 
 ## Escopo — o que ESTÁ dentro
 
-- Página única (one-page) com: apresentação da marca, destaques de produtos, prova social (opcional), botão de pedido.
-- Botão "Fazer Pedido" → abre WhatsApp com mensagem pronta.
+- Página única (one-page) com: apresentação da marca, destaques de produtos, prova social (opcional), botão único que abre o cardápio.
+- Botão "Ver Cardápio" → abre o PDF do cardápio. O link de WhatsApp com mensagem pronta fica dentro do próprio PDF, no rodapé (não é mais um botão do site).
 - Cardápio em PDF disponível para download/visualização.
 - Site 100% responsivo (funciona bem no celular — é onde a maioria vai acessar).
 

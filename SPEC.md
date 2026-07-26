@@ -41,8 +41,8 @@ Site one-page cujo único objetivo é converter visitantes em pedidos via WhatsA
 
 | ID | Requisito | Critério de aceite |
 |---|---|---|
-| RF-01 | Botão "Fazer Pedido" abre WhatsApp com mensagem pré-escrita | `wa.me/5541996123682?text=...` abre com o texto exato definido na seção 6.6, sem link de cardápio embutido |
-| RF-02 | Botão "Ver Cardápio" / "Abrir Cardápio (PDF)" abre o PDF do cardápio | Link aponta para `assets/cardapio/cardapio-belorae.pdf` e o arquivo existe e abre corretamente |
+| RF-01 | Link de WhatsApp com mensagem pré-escrita vive no rodapé do PDF do cardápio, não em um botão do site | `wa.me/5541996123682?text=...` abre com o texto exato definido na seção 6.6, a partir de um link clicável no rodapé do PDF (gerado por `assets/cardapio/gerar_cardapio.py`) |
+| RF-02 | Único botão do site, "Ver Cardápio", abre o PDF do cardápio | Link aponta para `assets/cardapio/cardapio-belorae.pdf` e o arquivo existe e abre corretamente |
 | RF-03 | Header exibe o logo real da marca (imagem, não texto) | `<img>` referenciando `assets/logo/belorae-logo-horizontal-fundo-creme.jpg`, proporção original preservada |
 | RF-04 | Seção "Sobre" exibe foto da fundadora (Jaque) com legenda | `assets/images/jaque-sobre.jpg` + legenda "Jaque, fundadora da Belorae" |
 | RF-05 | Footer exibe cidade de atuação | Texto "Rio Negro, PR. Atendemos Mafra e região." visível no footer |
@@ -120,13 +120,13 @@ Nenhum texto do site ou do cardápio pode usar "—" (em dash) ou "-" (hífen co
 
 Nenhum emoji em nenhum texto, título, botão ou elemento do site ou do cardápio.
 
-### 6.6 Mensagem do botão de WhatsApp (texto exato)
+### 6.6 Mensagem do link de WhatsApp no rodapé do PDF do cardápio (texto exato)
 
 ```
 Olá! Vi o site da Belorae e quero fazer um pedido.
 ```
 
-Sem link de cardápio embutido — o dono do projeto envia o cardápio manualmente ao cliente.
+O site não tem mais botão de WhatsApp. Este texto é usado no link `wa.me` que fica no rodapé do PDF do cardápio (gerado por `assets/cardapio/gerar_cardapio.py`), não em um elemento do `index.html`.
 
 ---
 
@@ -134,13 +134,12 @@ Sem link de cardápio embutido — o dono do projeto envia o cardápio manualmen
 
 | Seção | Conteúdo obrigatório | Observações |
 |---|---|---|
-| Header | Logo (imagem) + nav (Produtos, Sobre, Cardápio) + botão "Fazer Pedido" | Sticky no topo |
-| Hero | Título + subtítulo + botão primário (WhatsApp) + botão secundário (Ver Cardápio) | Título e subtítulo em `docs/PROJECT_SCOPE.md` / `index.html` atual |
+| Header | Logo (imagem) + nav (Produtos, Sobre, Cardápio) | Sticky no topo. Sem botão de pedido/WhatsApp |
+| Hero | Título + subtítulo | Sem botões. Título e subtítulo em `docs/PROJECT_SCOPE.md` / `index.html` atual |
 | Produtos (destaques) | 4 cards com foto, nome, descrição curta | Fotos de exemplo hoje (Pexels) — trocar por fotos reais antes do lançamento |
 | Sobre | Foto da Jaque + legenda + texto institucional | Foto real já recebida (`assets/images/jaque-sobre.jpg`) |
-| Cardápio (seção do site) | Texto curto + botão que abre o PDF | Não listar produtos direto no HTML — sempre via PDF |
-| CTA final | Reforço de chamada + botão WhatsApp | Fundo verde escuro |
-| Footer | Ícone/marca + texto institucional + cidade de atuação + ícone Instagram | Ver RF-05 e RF-06 |
+| Cardápio (seção do site) | Texto curto + único botão do site inteiro, "Ver Cardápio", que abre o PDF | Não listar produtos direto no HTML — sempre via PDF. O link de WhatsApp fica dentro do próprio PDF (rodapé), não nesta seção |
+| Footer | Ícone/marca + texto institucional + cidade de atuação + ícone Instagram | Ver RF-05 e RF-06. Não existe mais seção "CTA final" |
 
 ## 8. Especificação do Cardápio (PDF)
 
@@ -171,6 +170,7 @@ Time hierárquico completo em `.claude/agents/`, detalhado em `docs/AGENTS.md`. 
 | Fernanda | Product Manager | Define conteúdo/textos |
 | Eduardo | Solution Architect | Aprova abordagem técnica mais simples |
 | Marcos | Backend & Database Guardian | Veta backend/banco desnecessário |
+| Sofia | UX/UI Designer | Define direção visual antes da implementação e revisa polimento depois; cobra padrão premium, nunca amador |
 | Camila | Frontend Engineer | Implementa HTML/CSS/JS |
 | Rafael | QA Engineer | Testa fluxo de conversão antes de liberar |
 | Beatriz | Security Engineer | Revisa dados sensíveis e credenciais |
@@ -215,7 +215,7 @@ Publicação só é aprovada quando **todos** os itens abaixo forem verdadeiros:
 - [ ] Foto da Jaque na seção Sobre (RF-04)
 - [ ] Footer com cidade + Instagram (RF-05, RF-06)
 - [ ] Cardápio em PDF abre corretamente, com fotos, sem travessão (RF-02, RF-07)
-- [ ] Mensagem do WhatsApp exatamente como a seção 6.6, sem link de cardápio (RF-01)
+- [ ] Mensagem do link de WhatsApp no rodapé do PDF do cardápio exatamente como a seção 6.6 (RF-01)
 - [ ] Responsivo sem quebra em mobile (RF-08)
 - [ ] QA (Rafael) testou o fluxo completo
 - [ ] Security (Beatriz) revisou dados sensíveis

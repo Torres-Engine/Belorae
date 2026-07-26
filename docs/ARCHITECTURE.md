@@ -8,13 +8,13 @@ Visitante (celular/desktop)
         ▼
   index.html (GitHub Pages)
         │
-        ├── botão "Ver Cardápio" → abre PDF (assets/cardapio/cardapio-belorae.pdf)
-        │
-        └── botão "Fazer Pedido" → abre wa.me/55XXXXXXXXXXX?text=mensagem+pronta
-                                        │
-                                        ▼
-                                  WhatsApp do cliente
-                                  (conversa direta com a Belorae)
+        └── botão único "Ver Cardápio" → abre PDF (assets/cardapio/cardapio-belorae.pdf)
+                                                │
+                                                ├── (dentro do PDF, no rodapé) link wa.me/55XXXXXXXXXXX?text=mensagem+pronta
+                                                │
+                                                ▼
+                                          WhatsApp do cliente
+                                          (conversa direta com a Belorae)
 ```
 
 ## Decisão: sem backend, sem banco de dados

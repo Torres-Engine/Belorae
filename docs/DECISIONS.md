@@ -8,6 +8,12 @@ Registro de decisões técnicas importantes — para lembrar o "porquê" no futu
 **Motivo:** Site é só página de conversão para WhatsApp; não guarda dados. Backend seria custo/complexidade sem retorno nesta fase.
 **Revisitar se:** o negócio precisar de pagamento online, cadastro de clientes ou painel de pedidos.
 
+## 2026-07-25 — Adição da Sofia (UX/UI Designer) ao time
+
+**Decisão:** Novo agente dedicado só a julgamento visual/UX, com padrão de exigência alto (nível agência premium), posicionado antes de Camila implementar (define direção) e depois (revisão de polimento).
+**Motivo:** Nenhum agente existente tinha como responsabilidade central "isso está no nível profissional que a marca merece" — Fernanda define conteúdo, Camila implementa, mas ninguém tinha a palavra final sobre hierarquia visual, espaçamento e consistência de marca.
+**Revisitar se:** o site atingir maturidade visual estável e as revisões da Sofia pararem de gerar mudanças relevantes.
+
 ## 2026-07-25 — WhatsApp via link `wa.me`, sem API paga
 
 **Decisão:** Botão de pedido usa link `wa.me` com mensagem pré-escrita, não a API oficial do WhatsApp Business.
@@ -35,6 +41,13 @@ Registro de decisões técnicas importantes — para lembrar o "porquê" no futu
 
 **Decisão:** Cada subagente passou a ter um nome próprio comum, além do cargo: Ricardo (CEO AI), Fernanda (Product Manager), Eduardo (Solution Architect), Marcos (Backend & Database Guardian), Camila (Frontend Engineer), Rafael (QA Engineer), Beatriz (Security Engineer), Lucas (DevOps Engineer), Juliana (Technical Writer).
 **Motivo:** Facilitar reconhecer qual agente está atuando durante uma conversa no VS Code (mais natural que lembrar slugs técnicos). Os arquivos em `.claude/agents/` mantêm o nome do cargo (ex: `product-manager.md`); só o campo `name` interno e as referências cruzadas entre agentes mudaram.
+
+## 2026-07-25 — Um único botão no site; link de WhatsApp passa a viver no PDF do cardápio
+
+**Contexto:** O site tinha 3 pontos de CTA de WhatsApp (header, hero e seção final), mais um botão separado "Ver Cardápio". Eram vários botões repetindo a mesma ação, e o cardápio em PDF não tinha nenhum link de contato.
+**Decisão:** Remover os 3 botões de WhatsApp do site (header, hero, CTA final) e deixar só um botão no site inteiro: "Ver Cardápio", na seção do cardápio, perto do rodapé. O link de WhatsApp passou a ficar no rodapé do PDF do cardápio (`assets/cardapio/gerar_cardapio.py`), não mais no `index.html`.
+**Motivo:** Simplificar o caminho do visitante: site abre o cardápio, a pessoa decide o que quer e pede pelo WhatsApp direto do PDF. Menos botões repetidos para manter, `js/script.js` ficou vazio (nenhum botão no site precisa mais de JavaScript).
+**Revisitar se:** o dono do projeto perceber queda em pedidos pelo WhatsApp (por exemplo, se muita gente não abrir o PDF até o fim) — nesse caso, pode fazer sentido voltar a ter um botão de WhatsApp direto no site.
 
 ## 2026-07-25 — Imagens placeholder do Pexels, baixadas localmente
 

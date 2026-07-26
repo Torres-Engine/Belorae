@@ -4,22 +4,67 @@ Landing page de conversão de encomendas via WhatsApp.
 
 > **`SPEC.md`** é a fonte única da verdade do projeto (Spec-Driven Development). Qualquer implementação, atual ou reconstrução do zero, segue exatamente o que está lá.
 
+## Status Atual
+
+**Versão:** 1.3.0 (Simplificação de CTAs: um único botão no site)  
+**Data:** 2026-07-25  
+**Status:** ✅ **EM PRODUÇÃO** — Site ao vivo
+
+**URL do Site:** https://gplansb.github.io/Belorae-Start-R0/
+
+### Checklist de Lançamento
+- [x] HTML/CSS/JS reconstruído do zero
+- [x] Definition of Done: 11/11 itens passaram (QA)
+- [x] Segurança: Zero vulnerabilidades (Security)
+- [x] Conteúdo: Zero travessão, zero emoji (QA/CEO)
+- [x] Responsivo: Testado em mobile, tablet, desktop
+- [x] GitHub Pages: Ativado e publicado
+- [ ] Produtos e preços reais (bloqueador menor — dados pendentes do dono)
+- [ ] Fotos reais dos produtos (bloqueador menor — dados pendentes do dono)
+
+## Como Acessar
+
+1. **Site ao vivo:** https://gplansb.github.io/Belorae-Start-R0/
+2. **Repositório:** https://github.com/GPlanSB/Belorae-Start-R0
+3. **Documentação:** Ver pasta `docs/` ou arquivo `SPEC.md`
+
 ## Estrutura
 
 ```
-index.html            página única do site
-css/style.css          estilos
-js/script.js            interações
-assets/images/          fotos dos produtos (adicionar depois)
-assets/cardapio/        PDF do cardápio (adicionar depois)
-docs/                   documentação do projeto
-CLAUDE.md               contexto para o Claude Code no VS Code
+index.html                 — Página única (HTML5)
+css/style.css             — Estilos (CSS3, mobile-first)
+js/script.js              — Vazio hoje: o site não tem nenhum botão que precise de JavaScript
+assets/
+  logo/                   — 6 arquivos de identidade visual
+  images/                 — Fotos (Jaque + produtos)
+  cardapio/               — PDF + gerador Python
+docs/
+  SPEC.md                 — Fonte única da verdade (v1.0.0)
+  CHANGELOG.md            — Histórico de versões
+  ARCHITECTURE.md         — Stack técnica
+  DECISIONS.md            — Justificativas de design
+  AGENTS.md               — Time de agentes Claude
+  ROADMAP.md              — Próximas fases
+  DEPLOY.md               — Instruções de publicação
 ```
+
+## Tecnologia
+
+- **Frontend:** HTML5 + CSS3 (sem framework, sem JavaScript no momento)
+- **Hospedagem:** GitHub Pages (estático)
+- **Cardápio:** PDF gerado por Python (reportlab + Pillow)
+- **Contato:** Link `wa.me` (WhatsApp) — hoje só no rodapé do PDF do cardápio, não há mais botão de WhatsApp no site
+- **Versionamento:** Git + GitHub
+
+## Metodologia
+
+**Spec-Driven Development (SDD):** O projeto segue uma especificação única em `SPEC.md`. Toda implementação é validada contra essa spec (não copiar código antigo sem revisar).
 
 ## Documentação
 
 | Arquivo | Para que serve |
 |---|---|
+| `docs/SPEC.md` | Especificação completa (fonte única da verdade) |
 | `docs/PROJECT_SCOPE.md` | O que o projeto é e não é |
 | `docs/ARCHITECTURE.md` | Decisões técnicas e por quê |
 | `docs/ROADMAP.md` | O que vem agora, depois e no futuro |
@@ -29,21 +74,10 @@ CLAUDE.md               contexto para o Claude Code no VS Code
 | `docs/DEPLOY.md` | Passo a passo para publicar o site (GitHub Pages) |
 | `docs/AGENTS.md` | Time de agentes do Claude Code (`.claude/agents/`) e fluxo de revisão |
 
-## Como ver o site no seu computador
+## Próximos Passos
 
-1. Abra a pasta no VS Code.
-2. Instale a extensão **Live Server** (ícone de extensões → buscar "Live Server" → Install).
-3. Clique com botão direito em `index.html` → **Open with Live Server**.
-4. O site abre no navegador e atualiza sozinho a cada alteração salva.
-
-## Pendências antes de publicar
-
-Ver checklist completo em `docs/TASKS.md`. Os 3 itens que travam o lançamento:
-
-1. Número de WhatsApp real em `js/script.js`.
-2. PDF real do cardápio em `assets/cardapio/`.
-3. Fotos reais dos produtos em `assets/images/`.
-
-## Deploy
-
-Guia completo passo a passo em `docs/DEPLOY.md`.
+Ver `docs/ROADMAP.md` para:
+- Domínio customizado
+- Melhorias de performance
+- Automação de pedidos
+- Analytics

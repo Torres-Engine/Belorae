@@ -1,5 +1,54 @@
 # CHANGELOG.md
 
+## [1.4.0] — 2026-07-25 — Novo agente: Sofia (UX/UI Designer)
+
+### Adicionado
+- Novo agente no time: **Sofia (UX/UI Designer)**, `.claude/agents/ux-ui-designer.md`, modelo Opus — padrão de exigência de agência premium, foco em elevar o nível visual do site
+- Posicionada no fluxo: define direção visual antes de Camila implementar, e revisa polimento visual depois, antes de Rafael testar
+- `docs/AGENTS.md`, `SPEC.md` (seção 9) e `CLAUDE.md` atualizados para o time de 10 agentes
+- Decisão registrada em `docs/DECISIONS.md`
+
+## [1.3.0] — 2026-07-25 — Simplificação de CTAs (um único botão no site)
+
+### Alterado
+- Removido o botão "Fazer Pedido" do cabeçalho (header) do site
+- Removida a `.hero-buttons` inteira do hero: não existem mais ali os botões "Fazer Pedido pelo WhatsApp" e "Ver Cardápio"
+- Removida a seção inteira de CTA final (`.cta-final`, era "Pronto para pedir? ... Fazer Pedido pelo WhatsApp")
+- A seção "Cardápio" (`#cardapio`) passou a ter o único botão do site inteiro: "Ver Cardápio", que abre `assets/cardapio/cardapio-belorae.pdf`, posicionado perto do rodapé
+- `js/script.js` foi esvaziado (ficou só um comentário explicando o motivo) e a tag `<script src="js/script.js">` foi removida do `index.html` — o site não usa mais nenhum JavaScript, porque não sobrou nenhum botão que precise de clique em JS (o menu nunca teve toggle: ele já sumia só via CSS em telas pequenas)
+- CSS: removidas as regras que ficaram órfãs (`.hero-buttons`, `.btn-secondary`, `.btn-light`, `.cta-final` e as referências dentro dos media queries) e corrigida uma chave `}` solta que tinha sobrado no arquivo
+
+### Adicionado
+- Cardápio em PDF (script `assets/cardapio/gerar_cardapio.py`) ganhou um link clicável "Fazer pedido pelo WhatsApp" no rodapé, apontando para `https://wa.me/5541996123682` com a mensagem pronta
+- O caminho do projeto usado pelo script (antes fixo em `/sessions/...`, resquício de um ambiente antigo) agora é calculado a partir da posição do próprio arquivo — funciona em qualquer computador
+- `assets/cardapio/cardapio-belorae.pdf` foi regenerado (pelo dono do projeto, fora deste ambiente) já com o link de WhatsApp no rodapé
+
+### Testado
+- Responsividade revisada em 375px, 390px e 428px — nenhuma quebra encontrada além do bug de CSS já corrigido acima
+
+### Documentação
+- `SPEC.md` realinhado com o fluxo novo: RF-01 (link de WhatsApp agora descrito como vivendo no rodapé do PDF, não em botão do site), tabela de seções (seção 7: header e hero sem botão, sem seção "CTA final", cardápio como único botão do site) e seção 6.6 (mensagem descrita como do link do PDF, não de um botão) e item de Definition of Done (seção 11) atualizados
+- `docs/PROJECT_SCOPE.md` (escopo) e `docs/ARCHITECTURE.md` (diagrama de fluxo) atualizados para mostrar o caminho único: site → botão "Ver Cardápio" → PDF → link de WhatsApp dentro do PDF
+- `assets/cardapio/LEIA-ME.md` corrigido: não menciona mais "botão do site" apontando para o WhatsApp, e sim o botão único "Ver Cardápio" e o link dentro do PDF
+
+### Notes
+- Essa mudança inverte a lógica de conversão do site: antes, o WhatsApp era o botão principal em 3 lugares (header, hero e CTA final), e o cardápio em PDF não tinha nenhum link. Agora o site só tem um botão ("Ver Cardápio"), e é o PDF que leva ao WhatsApp, no rodapé. Motivo: menos botões repetidos, caminho único e claro (site → cardápio → WhatsApp)
+- Decisão de produto registrada em `docs/DECISIONS.md`
+
+## [1.2.0] — 2026-07-25 — Documentação Pós-Deploy (Fechamento da Onda 5)
+
+### Adicionado
+- Etapa 9 do plano de execução (Juliana) formalmente concluída: documentação revisada e alinhada após o rebuild completo (Onda 2 a 4) e a publicação no GitHub Pages (Onda 4)
+- `CLAUDE.md` passou a registrar explicitamente o status de produção e a URL do site ao vivo
+
+### Corrigido
+- URL do GitHub Pages tinha um erro de digitação em `README.md` e `docs/CHANGELOG.md` (aparecia como `gpansb`, faltando a letra "l"). Corrigido para `https://gplansb.github.io/Belorae-Start-R0/`, que corresponde ao nome real do usuário/organização do repositório (`GPlanSB`, em minúsculas conforme o padrão do GitHub Pages)
+- Mesma correção aplicada em `CLAUDE.md`
+
+### Notes
+- Com esta entrega, todas as 9 etapas do plano de execução do rebuild (seção 12 do `SPEC.md`) estão concluídas: Eduardo, Fernanda, Marcos, Camila, Rafael, Beatriz, Ricardo, Lucas e Juliana
+- Pendências que não bloqueiam o site continuar no ar (produtos/preços reais, fotos reais) seguem registradas em `docs/TASKS.md`
+
 ## [1.1.0] — 2026-07-25
 
 ### Adicionado
@@ -7,11 +56,39 @@
 - Ricardo (CEO AI) ganhou a responsabilidade permanente de identificar quando pode agrupar agentes em ondas, não só nesse rebuild
 - `docs/AGENTS.md` documenta a execução em ondas como padrão do time
 
-## [1.0.0] — 2026-07-25
+## [1.0.0] — 2026-07-25 — Rebuild do Zero (Versão Inicial)
 
-### Adicionado
-- `SPEC.md` na raiz do projeto: especificação técnica e de produto completa, seguindo Spec-Driven Development (SDD) — fonte única da verdade para o rebuild do zero
-- README.md e CLAUDE.md atualizados para referenciar `SPEC.md`
+### Added
+- **Novo:** Reconstrução completa do site seguindo SPEC.md v1.0.0 (Spec-Driven Development)
+- **Novo:** HTML5 semântico, CSS3 responsivo (375px–1440px), JavaScript vanilla
+- **Novo:** Design System completo: 6 cores CSS, tipografia em Georgia/sans-serif
+- **Novo:** 7 seções: Header, Hero, Produtos (4 cards), Sobre (foto Jaque), Cardápio (PDF), CTA final, Footer
+- **Novo:** Link WhatsApp integrado (RF-01): mensagem exata "Olá! Vi o site da Belorae e quero fazer um pedido."
+- **Novo:** Logo real (header, footer, favicon), foto da Jaque com legenda
+- **Novo:** Footer com localização "Rio Negro, PR. Atendemos Mafra e região." + Instagram link
+
+### Quality Assurance
+- ✅ **Definition of Done:** Todos os 11 critérios passaram (Rafael)
+- ✅ **Segurança:** Zero vulnerabilidades, zero credenciais commitadas (Beatriz)
+- ✅ **Conteúdo:** Zero travessão, zero emoji (Ricardo)
+- ✅ **Responsividade:** Testado em 375px, 768px, 1440px (Camila + Rafael)
+
+### Deployment
+- ✅ **GitHub Pages:** Site ao vivo em https://gplansb.github.io/Belorae-Start-R0/
+- ✅ **Repositório:** https://github.com/GPlanSB/Belorae-Start-R0 (Public)
+- ✅ **Branch:** main
+
+### Technical Details
+- **Stack:** HTML5 + CSS3 (mobile-first) + JavaScript vanilla
+- **Build:** Sem framework, sem bundler, sem build step
+- **Hospedagem:** GitHub Pages (estático)
+- **Cardápio:** PDF em `assets/cardapio/cardapio-belorae.pdf`
+- **Metodologia:** Spec-Driven Development (SDD)
+
+### Notes
+- Produtos e preços no cardápio são rascunho — substituir por dados reais antes de anunciar ao público (ver `docs/TASKS.md`)
+- Fotos de produtos são placeholders — substituir por fotos reais (ver `docs/TASKS.md`)
+- Pronto para melhorias futuras: domínio customizado, analytics, automação de pedidos
 
 ## [0.7.0] — 2026-07-25
 
