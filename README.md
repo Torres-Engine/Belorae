@@ -6,7 +6,7 @@ Landing page de conversão de encomendas via WhatsApp.
 
 ## Status Atual
 
-**Versão:** 1.6.0 (Botão "Fazer Pedido" na seção Cardápio + Instagram com gradiente oficial)  
+**Versão:** 1.7.0 (Ícones de WhatsApp e Instagram viram botões flutuantes fixos)  
 **Data:** 2026-07-26  
 **Status:** ✅ **EM PRODUÇÃO** — Site ao vivo
 
@@ -34,7 +34,7 @@ Landing page de conversão de encomendas via WhatsApp.
 index.html                 — Página única (HTML5)
 css/style.css             — Estilos (CSS3, mobile-first)
 js/script.js              — Vazio hoje: o site não tem nenhum botão que precise de JavaScript
-                            (os botões da seção Cardápio e os ícones do rodapé são links simples, não precisam de JS)
+                            (os botões da seção Cardápio e os botões flutuantes de contato são links simples, não precisam de JS)
 assets/
   logo/                   — 6 arquivos de identidade visual
   images/                 — Fotos (Jaque + produtos)
@@ -54,7 +54,7 @@ docs/
 - **Frontend:** HTML5 + CSS3 (sem framework, sem JavaScript no momento)
 - **Hospedagem:** GitHub Pages (estático)
 - **Cardápio:** PDF gerado por Python (reportlab + Pillow)
-- **Contato:** Link `wa.me` (WhatsApp) em 3 lugares: botão "Fazer Pedido" na seção Cardápio, ícone de acesso direto no rodapé do site (ao lado do ícone de Instagram) e rodapé do PDF do cardápio
+- **Contato:** Link `wa.me` (WhatsApp) em 3 lugares: botão "Fazer Pedido" na seção Cardápio, botão flutuante fixo no canto inferior direito da tela (ao lado do botão flutuante de Instagram) e rodapé do PDF do cardápio
 - **Versionamento:** Git + GitHub
 
 ## Metodologia

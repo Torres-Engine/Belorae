@@ -14,11 +14,15 @@ Visitante (celular/desktop)
         │                                                 │
         │                                                 └── (dentro do PDF, no rodapé) link wa.me/55XXXXXXXXXXX?text=mensagem+pronta
         │
-        └── ícone de WhatsApp no rodapé do site → link wa.me/55XXXXXXXXXXX?text=mensagem+pronta
+        └── ícone de WhatsApp flutuante (canto inferior direito, sempre visível) → link wa.me/55XXXXXXXXXXX?text=mensagem+pronta
                                                 │
                                                 ▼
                                           WhatsApp do cliente
                                           (conversa direta com a Belorae)
+
+  Ao lado do ícone de WhatsApp flutuante fica também um ícone de Instagram flutuante,
+  no mesmo canto inferior direito, linkando ao perfil @belorae_confeitaria (não gera
+  conversa de WhatsApp, é só um link de rede social).
 ```
 
 ## Decisão: sem backend, sem banco de dados

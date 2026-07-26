@@ -3,7 +3,7 @@
 ## Pendências de alinhamento (2026-07-25 — pós simplificação de CTAs v1.3.0)
 
 - [x] `SPEC.md` ficou desatualizado depois da v1.3.0: seção 7 e RF-01 ainda descreviam botão "Fazer Pedido" no header, botões no hero e CTA final com WhatsApp — resolvido em 2026-07-26: o dono do projeto pediu diretamente o retorno do botão "Fazer Pedido" (agora ao lado de "Ver Cardápio" na seção Cardápio, não mais no header/hero/CTA final), e o `SPEC.md` foi atualizado para refletir esse estado (RF-01, RF-02, seção 6.6, seção 7 e Definition of Done)
-- [ ] `docs/PROJECT_SCOPE.md`, `docs/ARCHITECTURE.md` e `assets/cardapio/LEIA-ME.md` ainda mencionam o fluxo de botão único ("Ver Cardápio" sozinho, sem WhatsApp no site) — precisam ser revisados para refletir os 2 botões da seção Cardápio ("Fazer Pedido" + "Ver Cardápio") e os 3 pontos de acesso ao WhatsApp (botão, ícone do rodapé, PDF)
+- [x] `docs/PROJECT_SCOPE.md`, `docs/ARCHITECTURE.md` e `assets/cardapio/LEIA-ME.md` ainda mencionavam o fluxo de botão único ("Ver Cardápio" sozinho, sem WhatsApp no site) — resolvido em 2026-07-26 (v1.7.0): os 3 arquivos foram revisados para refletir os 2 botões da seção Cardápio ("Fazer Pedido" + "Ver Cardápio") e os 3 pontos de acesso ao WhatsApp (botão "Fazer Pedido", botão flutuante fixo no canto inferior direito, e link dentro do PDF)
 
 ## Bloqueadores de lançamento (fazer antes de publicar)
 

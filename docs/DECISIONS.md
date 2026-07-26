@@ -2,6 +2,13 @@
 
 Registro de decisões técnicas importantes — para lembrar o "porquê" no futuro.
 
+## 2026-07-26 — Criação do Time de Negócio (separado do time técnico)
+
+**Decisão:** Criar um segundo time de 9 agentes (Marina, CEO do Negócio, mais 8 setores: Vitor, Patrícia, Renato, Bianca, Diego, Helena, Otávio, Fabiana), independente do time técnico que cuida do site.
+**Motivo:** O time técnico (Ricardo e equipe) cuida só do site. O negócio em si (produção, insumos, financeiro, marketing, atendimento, qualidade, jurídico, pessoas) precisa da própria estrutura de documentação e decisão, do zero até a operação completa.
+**Objetivo declarado:** transformar a Belorae na melhor confeitaria saudável da região, com toda a operação documentada e estruturada, não só o site.
+**Revisitar se:** algum setor virar redundante para o tamanho do negócio, ou se surgir necessidade de mais um setor (ex: expansão para outra cidade).
+
 ## 2026-07-25 — Site estático, sem backend
 
 **Decisão:** HTML/CSS/JS puro, sem framework, sem backend, sem banco de dados.
@@ -63,6 +70,14 @@ Registro de decisões técnicas importantes — para lembrar o "porquê" no futu
 **Motivo:** O dono do projeto decidiu que o WhatsApp precisa de um acesso mais direto e visível do que só o ícone discreto do rodapé, já que é o único caminho de conversão em pedido do site. Sobre o Instagram, a preferência foi estética: o dono quis o ícone reconhecível no padrão visual que todo mundo já associa ao Instagram, em vez de uma versão customizada na cor da marca.
 **Detalhe:** Desenhado por Sofia, implementado por Camila, aprovado por Rafael (QA, só com ressalva de desalinhamento do `SPEC.md`, já corrigida nesta rodada) e por Beatriz (Security, sem ressalvas). Decisão de produto tomada diretamente pelo dono do projeto, sem necessidade de nova aprovação de conteúdo.
 **Revisitar se:** o dono do projeto perceber que os 2 botões lado a lado ficam confusos ou redundantes na prática (por exemplo, se a maioria clicar direto em "Fazer Pedido" sem nunca abrir o cardápio) — nesse caso, vale reavaliar se o "Ver Cardápio" ainda é necessário nessa posição.
+
+## 2026-07-26 — Ícones de WhatsApp e Instagram viram botões flutuantes fixos (saem do rodapé)
+
+**Contexto:** Os ícones de WhatsApp e Instagram ficavam dentro do rodapé (`footer`) do site, junto com o texto da marca e a localização. Isso significava que só apareciam para quem rolava a página até o fim.
+**Decisão:** Os ícones saíram do rodapé e passaram a ser botões flutuantes fixos no canto inferior direito da tela (`.social-float`), visíveis durante toda a rolagem da página, com uma animação sutil de entrada ao carregar. O rodapé continua existindo, mas agora só com logo, nome da marca e localização.
+**Motivo:** O dono do projeto pediu acesso mais rápido ao contato, sem precisar rolar até o fim da página. Botões flutuantes sempre visíveis reduzem a fricção de quem quer chamar no WhatsApp ou ver o Instagram a qualquer momento da visita.
+**Detalhe:** Projetado por Sofia, implementado por Camila, aprovado por Rafael (QA) e Beatriz (Security), sem bloqueadores. Inclui suporte a `prefers-reduced-motion`, respeito à área segura de iPhones (`safe-area-inset`), ocultação na impressão (`@media print`) e espaço reservado no rodapé mobile para não sobrepor conteúdo.
+**Revisitar se:** os botões flutuantes atrapalharem a leitura de algum conteúdo em telas muito pequenas, ou se o dono do projeto preferir voltar a ter os ícones só no rodapé.
 
 ## 2026-07-25 — Imagens placeholder do Pexels, baixadas localmente
 

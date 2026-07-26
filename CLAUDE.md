@@ -1,11 +1,11 @@
 # CLAUDE.md — Contexto do Projeto
 
 > Este arquivo é lido automaticamente pela extensão Claude Code no VS Code.
-> Atualizado: 2026-07-26 — Rebuild v1.0.0 publicado, documentação fechada em v1.2.0, simplificação de CTAs em v1.3.0, reversão parcial (WhatsApp no rodapé) em v1.5.0, segunda reversão parcial (botão "Fazer Pedido" no cardápio) em v1.6.0
+> Atualizado: 2026-07-26 — Rebuild v1.0.0 publicado, documentação fechada em v1.2.0, simplificação de CTAs em v1.3.0, reversão parcial (WhatsApp no rodapé) em v1.5.0, segunda reversão parcial (botão "Fazer Pedido" no cardápio) em v1.6.0, ícones viram botões flutuantes fixos em v1.7.0
 
 ## Status Atual
 
-✅ **Site em Produção** — Versão 1.6.0 ao vivo em https://gplansb.github.io/Belorae-Start-R0/
+✅ **Site em Produção** — Versão 1.7.0 ao vivo em https://gplansb.github.io/Belorae-Start-R0/
 
 - ✅ Reconstruído do zero (Etapa 4 — Camila)
 - ✅ Testado: 11/11 itens do Definition of Done passaram (Etapa 5 — Rafael)
@@ -16,6 +16,7 @@
 - ✅ v1.3.0: site simplificado para um único botão ("Ver Cardápio"); os 3 botões de WhatsApp que existiam no site (header, hero, CTA final) foram removidos; o link de WhatsApp passou a ficar só no rodapé do PDF do cardápio; `js/script.js` está vazio (ver `docs/CHANGELOG.md`)
 - ✅ v1.5.0: reversão parcial. O botão único "Ver Cardápio" continua igual, mas o rodapé do site voltou a ter acesso direto ao WhatsApp, agora como ícone (ao lado do ícone de Instagram), por causa da fricção de precisar abrir o PDF para contatar. Também: enquadramento da foto da Jaque ajustado, responsividade mobile revisada e logo do header aumentada (ver `docs/CHANGELOG.md`)
 - ✅ v1.6.0: segunda reversão parcial. A seção Cardápio ganhou o botão "Fazer Pedido" ao lado do botão "Ver Cardápio" (os dois convivem, lado a lado), e o ícone de Instagram do rodapé passou a usar o gradiente oficial da marca em vez do contorno verde da Belorae. Site não tem mais "único botão" (ver `docs/CHANGELOG.md` e `docs/DECISIONS.md`)
+- ✅ v1.7.0: os ícones de WhatsApp e Instagram saíram do rodapé e viraram botões flutuantes fixos no canto inferior direito da tela, visíveis durante toda a rolagem da página. O rodapé agora só tem logo, nome da marca e localização. Ícone da logo do rodapé aumentado de 1.5rem para 1.75rem (ver `docs/CHANGELOG.md` e `docs/DECISIONS.md`)
 
 ## Fonte única da verdade
 
@@ -33,7 +34,7 @@ Site institucional **one-page** da **Belorae Confeitaria Saudável**. Objetivo �
 - Sem backend. Sem banco de dados.
 - Hospedagem: GitHub Pages (estático).
 - Cardápio: PDF hospedado em `assets/cardapio/`. A seção Cardápio do site tem 2 botões lado a lado: "Fazer Pedido" (WhatsApp) e "Ver Cardápio" (abre o PDF).
-- Pedido: o link `wa.me` com mensagem pré-escrita fica em 3 lugares: botão "Fazer Pedido" na seção Cardápio, ícone de WhatsApp no rodapé do `index.html` (ao lado do ícone de Instagram) e rodapé do PDF do cardápio.
+- Pedido: o link `wa.me` com mensagem pré-escrita fica em 3 lugares: botão "Fazer Pedido" na seção Cardápio, botão flutuante fixo de WhatsApp no canto inferior direito da tela (`.social-float`, ao lado do botão flutuante de Instagram, sempre visível durante a rolagem) e rodapé do PDF do cardápio. O rodapé do site (`footer`) não tem mais nenhum ícone de contato, só logo, nome da marca e localização.
 
 ## Estrutura
 
@@ -72,11 +73,13 @@ Rodada extra depois disso (v1.5.0): reversão parcial. O botão único "Ver Card
 
 Rodada extra depois disso (v1.6.0): segunda reversão parcial, pedida diretamente pelo dono do projeto. A seção Cardápio ganhou o botão "Fazer Pedido" (WhatsApp) ao lado do botão "Ver Cardápio" (os dois coexistem), e o ícone de Instagram do rodapé passou a usar o gradiente oficial da marca. O site não tem mais "um único botão"; tem 2 na seção Cardápio, mais os ícones do rodapé. Detalhes em `docs/CHANGELOG.md` e motivo em `docs/DECISIONS.md`.
 
+Rodada extra depois disso (v1.7.0): os ícones de WhatsApp e Instagram saíram do rodapé e viraram botões flutuantes fixos no canto inferior direito da tela, sempre visíveis durante a rolagem da página, pedido diretamente pelo dono do projeto para dar acesso mais rápido ao contato. O rodapé passou a ter só logo, nome da marca e localização. Detalhes em `docs/CHANGELOG.md` e motivo em `docs/DECISIONS.md`.
+
 ## Convenções
 
 - Um único `index.html`. Não criar múltiplas páginas sem necessidade.
 - CSS em `css/style.css` — não usar CSS inline nem `<style>` no HTML.
-- JS mínimo — hoje `js/script.js` está vazio, porque não sobrou nenhum botão que precise de comportamento em JS (o menu some só via CSS, e o ícone de WhatsApp do rodapé é um link simples). Só adicionar código ali se realmente for necessário no futuro.
+- JS mínimo — hoje `js/script.js` está vazio, porque não sobrou nenhum botão que precise de comportamento em JS (o menu some só via CSS, e os botões flutuantes de WhatsApp/Instagram são links simples). Só adicionar código ali se realmente for necessário no futuro.
 - Não instalar dependências/npm sem justificativa forte — o projeto é intencionalmente sem build step.
 - Cores e nomes de produtos: ver `docs/PROJECT_SCOPE.md`.
 
@@ -97,4 +100,7 @@ Português do Brasil (pt-BR).
 
 ## Time de Agentes (Claude Code)
 
-10 agentes especializados em `.claude/agents/`, incluindo a Sofia (UX/UI Designer), adicionada para elevar o nível visual do site. Ver `docs/AGENTS.md` para detalhes.
+Dois times, ambos em `.claude/agents/`:
+
+- **Time técnico** (10 agentes, liderado por Ricardo): cuida do site. Ver `docs/AGENTS.md`.
+- **Time de negócio** (9 agentes, liderado por Marina): cuida da empresa (produção, insumos, financeiro, marketing, atendimento, qualidade, jurídico, pessoas). Ver `docs/EQUIPE_NEGOCIO.md`.

@@ -1,5 +1,43 @@
 # CHANGELOG.md
 
+## [1.8.0] — 2026-07-26 — Novo time: Equipe de Negócio da Belorae
+
+### Adicionado
+- Segundo time de agentes, independente do time técnico: **Marina** (Diretora Geral / CEO do Negócio, modelo Opus) e 8 setores: **Vitor** (Produção), **Patrícia** (Compras & Insumos), **Renato** (Financeiro), **Bianca** (Marketing & Vendas), **Diego** (Atendimento & Operações de Pedido), **Helena** (Qualidade & Segurança Alimentar), **Otávio** (Jurídico & Regulatório), **Fabiana** (Recursos Humanos)
+- Arquivos em `.claude/agents/`: `diretora-negocio.md`, `producao-confeitaria.md`, `compras-insumos.md`, `financeiro.md`, `marketing-vendas.md`, `atendimento-operacoes.md`, `qualidade-seguranca-alimentar.md`, `juridico-regulatorio.md`, `recursos-humanos.md`
+- Nova documentação: `docs/EQUIPE_NEGOCIO.md`, com fluxo de acionamento e tabela de referência
+- `CLAUDE.md` atualizado para referenciar os dois times (técnico e de negócio)
+- Objetivo do time registrado em `docs/DECISIONS.md`: transformar a Belorae na melhor confeitaria saudável da região
+
+## [1.7.0] — 2026-07-26 — Ícones de WhatsApp e Instagram viram botões flutuantes fixos
+
+### Alterado
+- Os ícones de WhatsApp e Instagram saíram do rodapé do site e viraram botões flutuantes fixos no canto inferior direito da tela (`.social-float`), visíveis o tempo todo durante a rolagem da página, não só quando a pessoa chega ao final
+- Botões flutuantes têm uma animação sutil de entrada (aparecem com um pequeno deslizar de baixo para cima e fade, meio segundo depois da página carregar)
+- Suporte a `prefers-reduced-motion`: quem tem essa preferência de acessibilidade ativada no navegador não vê a animação de entrada nem as transições de hover dos botões
+- Posição dos botões respeita a área segura de iPhones com notch/barra inferior (`env(safe-area-inset-right)` e `env(safe-area-inset-bottom)`), para não ficarem cobertos ou cortados
+- Botões flutuantes ficam ocultos na impressão da página (`@media print`), já que não fazem sentido em papel
+- Reservado um espaço extra no rodapé em telas pequenas (mobile) para os botões flutuantes não ficarem sobrepostos ao texto do rodapé
+- Ícone da logo no rodapé (`.footer-icon`) aumentado de 1.5rem para 1.75rem
+- O rodapé do site agora tem só logo, nome da marca e localização (Rio Negro, PR. Atendemos Mafra e região) — sem nenhum ícone de contato
+
+### Testado
+- Rafael (QA) aprovou, sem bloqueadores
+- Beatriz (Security) aprovou, sem bloqueadores
+
+### Documentação
+- `SPEC.md`: seção 6.6, seção 7 (tabela de seções) corrigidas de "ícone no rodapé" para "botões flutuantes fixos no canto inferior direito"
+- `docs/ARCHITECTURE.md`: diagrama de fluxo atualizado (ícone de WhatsApp deixou de aparecer como item do rodapé e passou a ser descrito como flutuante; ícone de Instagram incluído no diagrama)
+- `docs/PROJECT_SCOPE.md` e `assets/cardapio/LEIA-ME.md` revisados para não deixarem menções desatualizadas sobre pontos de acesso ao WhatsApp
+- `docs/DECISIONS.md`: nova entrada registrando o motivo da mudança de posição
+- `docs/TASKS.md`: pendência apontada pelo Rafael (desalinhamento de `docs/PROJECT_SCOPE.md`, `docs/ARCHITECTURE.md` e `assets/cardapio/LEIA-ME.md` sobre os pontos de acesso ao WhatsApp) marcada como resolvida
+- `README.md` e `CLAUDE.md` atualizados para a versão 1.7.0 e para não falarem mais em "ícone no rodapé"
+
+### Notes
+- Motivo: o dono do projeto pediu que os ícones ficassem sempre visíveis durante a navegação, sem precisar rolar até o fim da página para encontrá-los. Botões flutuantes no canto inferior direito são um padrão comum em sites de contato rápido (WhatsApp, chat) e resolvem exatamente essa fricção
+- Projetado por Sofia, implementado por Camila, aprovado por Rafael (QA) e Beatriz (Security), sem bloqueadores
+- Decisão de produto registrada em `docs/DECISIONS.md`
+
 ## [1.6.0] — 2026-07-26 — Segunda reversão parcial: botão "Fazer Pedido" na seção Cardápio + Instagram com gradiente oficial
 
 ### Adicionado
