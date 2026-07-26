@@ -41,15 +41,16 @@ Site one-page cujo único objetivo é converter visitantes em pedidos via WhatsA
 
 | ID | Requisito | Critério de aceite |
 |---|---|---|
-| RF-01 | Link de WhatsApp com mensagem pré-escrita vive no rodapé do PDF do cardápio, não em um botão do site | `wa.me/5541996123682?text=...` abre com o texto exato definido na seção 6.6, a partir de um link clicável no rodapé do PDF (gerado por `assets/cardapio/gerar_cardapio.py`) |
+| RF-01 | Link de WhatsApp com mensagem pré-escrita vive no rodapé do PDF do cardápio e no ícone de WhatsApp do rodapé do site | `wa.me/5541996123682?text=...` abre com o texto exato definido na seção 6.6, tanto a partir do link clicável no rodapé do PDF (gerado por `assets/cardapio/gerar_cardapio.py`) quanto do ícone de WhatsApp no rodapé do `index.html` |
 | RF-02 | Único botão do site, "Ver Cardápio", abre o PDF do cardápio | Link aponta para `assets/cardapio/cardapio-belorae.pdf` e o arquivo existe e abre corretamente |
 | RF-03 | Header exibe o logo real da marca (imagem, não texto) | `<img>` referenciando `assets/logo/belorae-logo-horizontal-fundo-creme.jpg`, proporção original preservada |
-| RF-04 | Seção "Sobre" exibe foto da fundadora (Jaque) com legenda | `assets/images/jaque-sobre.jpg` + legenda "Jaque, fundadora da Belorae" |
+| RF-04 | Seção "Sobre" exibe foto da fundadora (Jaque) com legenda | `assets/images/jaque-sobre-v2.jpg` + legenda "Jaque, fundadora da Belorae" |
 | RF-05 | Footer exibe cidade de atuação | Texto "Rio Negro, PR. Atendemos Mafra e região." visível no footer |
 | RF-06 | Footer tem ícone de Instagram linkando ao perfil da marca | Link para `https://www.instagram.com/belorae_confeitaria`, abre em nova aba, `rel="noopener"` |
 | RF-07 | Cardápio em PDF lista todos os produtos com nome, descrição, preço e foto | Ver seção 7 — 8 itens em 4 categorias, cada um com foto quadrada |
 | RF-08 | Site 100% responsivo (mobile-first) | Layout íntegro em telas de 375px a 1440px, sem scroll horizontal |
 | RF-09 | Favicon reflete a marca | `<link rel="icon">` aponta para um dos ícones em `assets/logo/` |
+| RF-10 | Footer tem ícone de WhatsApp com acesso direto, ao lado do ícone de Instagram | SVG inline em verde oficial `#25D366`, linkando para `wa.me/5541996123682?text=...` com a mensagem da seção 6.6, abre em nova aba, `rel="noopener"` |
 
 ## 4. Requisitos Não-Funcionais
 
@@ -126,7 +127,7 @@ Nenhum emoji em nenhum texto, título, botão ou elemento do site ou do cardápi
 Olá! Vi o site da Belorae e quero fazer um pedido.
 ```
 
-O site não tem mais botão de WhatsApp. Este texto é usado no link `wa.me` que fica no rodapé do PDF do cardápio (gerado por `assets/cardapio/gerar_cardapio.py`), não em um elemento do `index.html`.
+Este texto é usado no link `wa.me` em dois lugares: no rodapé do PDF do cardápio (gerado por `assets/cardapio/gerar_cardapio.py`) e no ícone de WhatsApp do rodapé do site (`index.html`). O botão único do site continua sendo "Ver Cardápio" (seção 7); o ícone do rodapé é um acesso direto de contato, não um CTA duplicado.
 
 ---
 
@@ -139,7 +140,7 @@ O site não tem mais botão de WhatsApp. Este texto é usado no link `wa.me` que
 | Produtos (destaques) | 4 cards com foto, nome, descrição curta | Fotos de exemplo hoje (Pexels) — trocar por fotos reais antes do lançamento |
 | Sobre | Foto da Jaque + legenda + texto institucional | Foto real já recebida (`assets/images/jaque-sobre.jpg`) |
 | Cardápio (seção do site) | Texto curto + único botão do site inteiro, "Ver Cardápio", que abre o PDF | Não listar produtos direto no HTML — sempre via PDF. O link de WhatsApp fica dentro do próprio PDF (rodapé), não nesta seção |
-| Footer | Ícone/marca + texto institucional + cidade de atuação + ícone Instagram | Ver RF-05 e RF-06. Não existe mais seção "CTA final" |
+| Footer | Ícone/marca + texto institucional + cidade de atuação + ícone WhatsApp + ícone Instagram | Ver RF-05, RF-06 e RF-10. Não existe mais seção "CTA final" |
 
 ## 8. Especificação do Cardápio (PDF)
 
@@ -213,9 +214,9 @@ Publicação só é aprovada quando **todos** os itens abaixo forem verdadeiros:
 - [ ] Zero emoji em qualquer lugar (RNF-02)
 - [ ] Logo real aplicado no header, footer e favicon (RF-03, RF-09)
 - [ ] Foto da Jaque na seção Sobre (RF-04)
-- [ ] Footer com cidade + Instagram (RF-05, RF-06)
+- [ ] Footer com cidade + ícone WhatsApp + Instagram (RF-05, RF-06, RF-10)
 - [ ] Cardápio em PDF abre corretamente, com fotos, sem travessão (RF-02, RF-07)
-- [ ] Mensagem do link de WhatsApp no rodapé do PDF do cardápio exatamente como a seção 6.6 (RF-01)
+- [ ] Mensagem do link de WhatsApp exatamente como a seção 6.6, tanto no rodapé do PDF quanto no ícone do rodapé do site (RF-01)
 - [ ] Responsivo sem quebra em mobile (RF-08)
 - [ ] QA (Rafael) testou o fluxo completo
 - [ ] Security (Beatriz) revisou dados sensíveis

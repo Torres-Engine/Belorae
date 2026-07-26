@@ -1,5 +1,23 @@
 # CHANGELOG.md
 
+## [1.5.0] — 2026-07-26 — Reversão parcial: WhatsApp de volta no rodapé + ajustes de polimento (Sofia)
+
+### Alterado
+- Rodapé (`footer`) do site ganhou de volta um ícone de WhatsApp com acesso direto, ao lado de um ícone de Instagram (antes era só um link de texto). Ícones em SVG inline, desenhados pela Sofia: WhatsApp em verde oficial `#25D366` preenchido, Instagram contornado na cor da marca. Implementado por Camila
+- O botão único "Ver Cardápio" na seção de cardápio continua exatamente igual, sem nenhuma mudança
+- Enquadramento da foto da Jaque na seção "Sobre" ajustado (novo arquivo `assets/images/jaque-sobre-v2.jpg`)
+- Ajustes de responsividade mobile no header e na tipografia, revisados pela Sofia
+- Logo do header aumentada (revisão de polimento da Sofia), com `scroll-padding-top` adicionado ao `html` para a navegação por âncora não ficar escondida atrás do header sticky
+
+### Documentação
+- `docs/DECISIONS.md`: nova entrada registrando a reversão parcial (contexto, decisão, motivo, quando revisitar)
+- `SPEC.md`: seção 6.6 e tabela da seção 7 atualizadas (o site voltou a ter acesso direto ao WhatsApp, agora como ícone no rodapé, não mais ausente); novo requisito RF-10 (ícone de WhatsApp no rodapé); RF-01 e Definition of Done (seção 11) ajustados para refletir os dois lugares onde o link de WhatsApp aparece (PDF e rodapé do site)
+- `README.md` e `CLAUDE.md` atualizados para versão 1.5.0 e para não afirmarem mais que "o site não tem nenhum link de WhatsApp"
+
+### Notes
+- Motivo da reversão: o dono do projeto avaliou o site ao vivo e considerou a fricção grande demais para contatar via WhatsApp (era preciso abrir o PDF do cardápio e rolar até o rodapé). O ícone do rodapé resolve isso sem voltar a ter os 3 botões de WhatsApp removidos na v1.3.0 (header, hero, CTA final) — é uma posição discreta, de contato/rede social, não um CTA duplicado
+- Decisão de produto registrada em `docs/DECISIONS.md`
+
 ## [1.4.0] — 2026-07-25 — Novo agente: Sofia (UX/UI Designer)
 
 ### Adicionado

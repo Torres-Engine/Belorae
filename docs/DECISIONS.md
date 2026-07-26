@@ -49,6 +49,13 @@ Registro de decisões técnicas importantes — para lembrar o "porquê" no futu
 **Motivo:** Simplificar o caminho do visitante: site abre o cardápio, a pessoa decide o que quer e pede pelo WhatsApp direto do PDF. Menos botões repetidos para manter, `js/script.js` ficou vazio (nenhum botão no site precisa mais de JavaScript).
 **Revisitar se:** o dono do projeto perceber queda em pedidos pelo WhatsApp (por exemplo, se muita gente não abrir o PDF até o fim) — nesse caso, pode fazer sentido voltar a ter um botão de WhatsApp direto no site.
 
+## 2026-07-26 — Reversão parcial: ícone de WhatsApp de volta no rodapé do site
+
+**Contexto:** O dono do projeto revisou o site ao vivo depois da decisão anterior ("Um único botão no site; link de WhatsApp passa a viver no PDF do cardápio") e percebeu que a fricção para contatar via WhatsApp ficou grande demais: o cliente precisava abrir o PDF do cardápio e rolar até o rodapé para encontrar o link.
+**Decisão:** O botão único "Ver Cardápio" continua exatamente igual, como o CTA principal da seção de cardápio. O que muda é o rodapé (`footer`) do site, que ganhou de volta um ícone de WhatsApp com acesso direto (mesmo link `wa.me` e mensagem da seção 6.6 do `SPEC.md`), ao lado de um ícone de Instagram (antes era só um link de texto). Não são os 3 botões de WhatsApp removidos anteriormente (header, hero, CTA final) — é uma posição mais discreta, de contato/rede social no rodapé, não um CTA duplicado no topo do site.
+**Motivo:** Equilíbrio entre a simplicidade visual que motivou a decisão original (evitar vários botões repetindo a mesma ação) e a necessidade prática de não esconder demais o canal principal de conversão do negócio.
+**Revisitar se:** depois de publicado, ainda parecer que poucas pessoas usam o ícone do rodapé — nesse caso, considerar um CTA adicional mais visível.
+
 ## 2026-07-25 — Imagens placeholder do Pexels, baixadas localmente
 
 **Decisão:** Enquanto o dono do projeto não envia fotos reais dos produtos, usar 4 fotos gratuitas do banco Pexels (licença livre de uso, sem necessidade de atribuição) baixadas como arquivos reais em `assets/images/` — não hotlinkadas por URL externa.

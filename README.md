@@ -6,8 +6,8 @@ Landing page de conversão de encomendas via WhatsApp.
 
 ## Status Atual
 
-**Versão:** 1.3.0 (Simplificação de CTAs: um único botão no site)  
-**Data:** 2026-07-25  
+**Versão:** 1.5.0 (Reversão parcial: WhatsApp de volta no rodapé)  
+**Data:** 2026-07-26  
 **Status:** ✅ **EM PRODUÇÃO** — Site ao vivo
 
 **URL do Site:** https://gplansb.github.io/Belorae-Start-R0/
@@ -34,6 +34,7 @@ Landing page de conversão de encomendas via WhatsApp.
 index.html                 — Página única (HTML5)
 css/style.css             — Estilos (CSS3, mobile-first)
 js/script.js              — Vazio hoje: o site não tem nenhum botão que precise de JavaScript
+                            (o ícone de WhatsApp no rodapé é um link simples, não precisa de JS)
 assets/
   logo/                   — 6 arquivos de identidade visual
   images/                 — Fotos (Jaque + produtos)
@@ -53,7 +54,7 @@ docs/
 - **Frontend:** HTML5 + CSS3 (sem framework, sem JavaScript no momento)
 - **Hospedagem:** GitHub Pages (estático)
 - **Cardápio:** PDF gerado por Python (reportlab + Pillow)
-- **Contato:** Link `wa.me` (WhatsApp) — hoje só no rodapé do PDF do cardápio, não há mais botão de WhatsApp no site
+- **Contato:** Link `wa.me` (WhatsApp) no rodapé do PDF do cardápio e também como ícone de acesso direto no rodapé do site (ao lado do ícone de Instagram)
 - **Versionamento:** Git + GitHub
 
 ## Metodologia
