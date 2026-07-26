@@ -8,9 +8,11 @@ Visitante (celular/desktop)
         ▼
   index.html (GitHub Pages)
         │
-        ├── botão principal "Ver Cardápio" → abre PDF (assets/cardapio/cardapio-belorae.pdf)
-        │                                         │
-        │                                         └── (dentro do PDF, no rodapé) link wa.me/55XXXXXXXXXXX?text=mensagem+pronta
+        ├── botão "Fazer Pedido" (seção Cardápio) → link wa.me/55XXXXXXXXXXX?text=mensagem+pronta
+        │
+        ├── botão "Ver Cardápio" (seção Cardápio) → abre PDF (assets/cardapio/cardapio-belorae.pdf)
+        │                                                 │
+        │                                                 └── (dentro do PDF, no rodapé) link wa.me/55XXXXXXXXXXX?text=mensagem+pronta
         │
         └── ícone de WhatsApp no rodapé do site → link wa.me/55XXXXXXXXXXX?text=mensagem+pronta
                                                 │

@@ -1,5 +1,29 @@
 # CHANGELOG.md
 
+## [1.6.0] — 2026-07-26 — Segunda reversão parcial: botão "Fazer Pedido" na seção Cardápio + Instagram com gradiente oficial
+
+### Adicionado
+- Novo botão "Fazer Pedido" na seção Cardápio (`#cardapio`), posicionado ao lado do botão "Ver Cardápio", dentro de um painel visual novo (`.cardapio-panel` / `.cardapio-buttons`). "Fazer Pedido" abre o WhatsApp direto (`wa.me/5541996123682`) com a mesma mensagem da seção 6.6 do `SPEC.md`; "Ver Cardápio" continua abrindo o PDF. Desenhado por Sofia, implementado por Camila
+
+### Alterado
+- Ícone de Instagram do rodapé deixou de ser contornado na cor verde da Belorae e passou a usar o gradiente oficial da marca Instagram (amarelo, laranja, rosa, roxo), por preferência explícita do dono do projeto
+- A cor `--cor-acento` (terracota) ficou reservada só para o botão principal ("Fazer Pedido"), reforçando qual dos dois botões é a ação prioritária
+- Adicionado suporte a `prefers-reduced-motion`: quem usa essa preferência de acessibilidade no navegador deixa de ver as transições e animações de hover nos botões e ícones
+
+### Testado
+- Rafael (QA) aprovou o fluxo completo, com ressalva só de documentação (o `SPEC.md` ainda descrevia "único botão do site"), corrigida nesta entrega
+- Beatriz (Security) aprovou sem ressalvas
+
+### Documentação
+- `SPEC.md`: RF-01 e RF-02 corrigidos (a seção Cardápio agora tem 2 botões, não um só); RF-06 detalhado com o gradiente oficial do Instagram; seção 6.6 e tabela da seção 7 (linha Cardápio e linha Footer) atualizadas para descrever os 2 botões e os 3 pontos de acesso ao WhatsApp no site (botão "Fazer Pedido", ícone do rodapé, link dentro do PDF); Definition of Done (seção 11) ajustada
+- `docs/DECISIONS.md`: nova entrada registrando a segunda reversão parcial (contexto, decisão, motivo, quando revisitar)
+- `docs/TASKS.md`: pendência de desalinhamento do `SPEC.md` (aberta na v1.3.0) marcada como resolvida
+- `README.md` e `CLAUDE.md` atualizados para a versão 1.6.0 e para não afirmarem mais "único botão do site"
+
+### Notes
+- Motivo: o dono do projeto avaliou que o ícone de WhatsApp do rodapé (adicionado na v1.5.0) ainda deixava o acesso ao WhatsApp pouco visível, longe de onde a pessoa decide pedir. O botão "Fazer Pedido" na seção Cardápio resolve isso sem remover o ícone do rodapé (os dois convivem, junto com o link dentro do PDF: 3 pontos de acesso ao WhatsApp no total)
+- Decisão de produto tomada diretamente pelo dono do projeto, registrada em `docs/DECISIONS.md`
+
 ## [1.5.0] — 2026-07-26 — Reversão parcial: WhatsApp de volta no rodapé + ajustes de polimento (Sofia)
 
 ### Alterado

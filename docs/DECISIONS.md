@@ -56,6 +56,14 @@ Registro de decisões técnicas importantes — para lembrar o "porquê" no futu
 **Motivo:** Equilíbrio entre a simplicidade visual que motivou a decisão original (evitar vários botões repetindo a mesma ação) e a necessidade prática de não esconder demais o canal principal de conversão do negócio.
 **Revisitar se:** depois de publicado, ainda parecer que poucas pessoas usam o ícone do rodapé — nesse caso, considerar um CTA adicional mais visível.
 
+## 2026-07-26 — Segunda reversão parcial: botão "Fazer Pedido" de volta na seção Cardápio + Instagram com gradiente oficial
+
+**Contexto:** Mesmo depois do ícone de WhatsApp voltar ao rodapé (decisão de 2026-07-26 acima), o dono do projeto avaliou o site ao vivo de novo e achou que o acesso ao WhatsApp ainda estava pouco visível: o ícone do rodapé é pequeno e fica só no fim da página, longe de onde a pessoa decide pedir (a seção do cardápio).
+**Decisão:** A seção "Cardápio" ganhou um segundo botão, "Fazer Pedido", posicionado ao lado do botão "Ver Cardápio" (não substitui, os dois coexistem lado a lado num painel visual novo). "Fazer Pedido" abre o WhatsApp direto, com a mesma mensagem da seção 6.6 do `SPEC.md`. Além disso, o ícone de Instagram do rodapé deixou de ser contornado na cor verde da Belorae (recomendação anterior da Sofia) e passou a usar o gradiente oficial da marca Instagram (amarelo, laranja, rosa, roxo), por preferência explícita do dono do projeto.
+**Motivo:** O dono do projeto decidiu que o WhatsApp precisa de um acesso mais direto e visível do que só o ícone discreto do rodapé, já que é o único caminho de conversão em pedido do site. Sobre o Instagram, a preferência foi estética: o dono quis o ícone reconhecível no padrão visual que todo mundo já associa ao Instagram, em vez de uma versão customizada na cor da marca.
+**Detalhe:** Desenhado por Sofia, implementado por Camila, aprovado por Rafael (QA, só com ressalva de desalinhamento do `SPEC.md`, já corrigida nesta rodada) e por Beatriz (Security, sem ressalvas). Decisão de produto tomada diretamente pelo dono do projeto, sem necessidade de nova aprovação de conteúdo.
+**Revisitar se:** o dono do projeto perceber que os 2 botões lado a lado ficam confusos ou redundantes na prática (por exemplo, se a maioria clicar direto em "Fazer Pedido" sem nunca abrir o cardápio) — nesse caso, vale reavaliar se o "Ver Cardápio" ainda é necessário nessa posição.
+
 ## 2026-07-25 — Imagens placeholder do Pexels, baixadas localmente
 
 **Decisão:** Enquanto o dono do projeto não envia fotos reais dos produtos, usar 4 fotos gratuitas do banco Pexels (licença livre de uso, sem necessidade de atribuição) baixadas como arquivos reais em `assets/images/` — não hotlinkadas por URL externa.

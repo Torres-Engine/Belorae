@@ -17,6 +17,7 @@
   --fonte-corpo: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   --raio: 12px;
+  --raio-grande: 22px;
   --sombra: 0 8px 24px rgba(62, 47, 34, 0.1);
 }
 
@@ -91,19 +92,32 @@ p {
   transform: translateY(-2px);
 }
 
-.btn:focus {
+.btn:focus-visible {
   outline: 2px solid var(--cor-acento);
   outline-offset: 2px;
 }
 
 .btn-primary {
-  background: var(--cor-primaria);
-  color: var(--cor-branco);
-  box-shadow: 0 6px 16px rgba(110, 135, 99, 0.2);
+  background: var(--cor-acento);
+  color: var(--cor-texto);
+  box-shadow: 0 6px 18px rgba(201, 138, 99, 0.28);
 }
 
 .btn-primary:hover {
+  background: #B87953;
+  box-shadow: 0 10px 24px rgba(201, 138, 99, 0.36);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--cor-primaria-escura);
+  border: 1.5px solid rgba(79, 102, 71, 0.45);
+}
+
+.btn-secondary:hover {
   background: var(--cor-primaria-escura);
+  border-color: var(--cor-primaria-escura);
+  color: var(--cor-branco);
 }
 
 /* ===== HEADER ===== */
@@ -261,7 +275,7 @@ p {
 
 .founder-name {
   font-size: 0.9rem;
-  color: var(--cor-acento);
+  color: var(--cor-primaria-escura);
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -274,20 +288,76 @@ p {
 
 /* ===== CARDÁPIO ===== */
 .cardapio-section {
-  padding: 4rem 1.5rem;
+  padding: 4.5rem 1.5rem;
   text-align: center;
 }
 
-.cardapio-section h2 {
-  margin-bottom: 1rem;
+.cardapio-panel {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.75rem;
+  border-radius: var(--raio-grande);
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 60%),
+    var(--cor-primaria-escura);
+  box-shadow: 0 24px 60px rgba(79, 102, 71, 0.22);
 }
 
-.cardapio-section p {
-  margin-bottom: 2rem;
-  color: rgba(62, 47, 34, 0.75);
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+.cardapio-panel::before {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 2px;
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+  background: rgba(250, 246, 238, 0.4);
+}
+
+.cardapio-panel h2 {
+  color: var(--cor-fundo);
+  margin-bottom: 0.875rem;
+}
+
+.cardapio-panel p {
+  color: rgba(250, 246, 238, 0.82);
+  max-width: 32em;
+  margin: 0 auto 2rem;
+}
+
+.cardapio-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.cardapio-buttons .btn {
+  padding: 1rem 2.25rem;
+  min-width: 11.5rem;
+}
+
+.cardapio-panel .btn-secondary {
+  color: var(--cor-fundo);
+  border-color: rgba(250, 246, 238, 0.55);
+}
+
+.cardapio-panel .btn-secondary:hover {
+  background: var(--cor-fundo);
+  border-color: var(--cor-fundo);
+  color: var(--cor-primaria-escura);
+}
+
+.cardapio-panel .btn:focus-visible {
+  outline-color: var(--cor-fundo);
+}
+
+@media (min-width: 520px) {
+  .cardapio-buttons {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 /* ===== FOOTER ===== */
@@ -382,22 +452,29 @@ p {
 }
 
 .social-instagram {
-  background: transparent;
-  border: 1.5px solid rgba(79, 102, 71, 0.35);
-  color: var(--cor-primaria-escura);
+  border: none;
+  color: var(--cor-branco);
+  background-color: #C13584;
+  background-image: radial-gradient(circle at 28% 106%,
+    #FFDC80 0%,
+    #FCAF45 15%,
+    #F77737 28%,
+    #F56040 38%,
+    #FD1D1D 48%,
+    #E1306C 62%,
+    #C13584 76%,
+    #833AB4 100%);
 }
 
 .social-instagram svg {
-  width: 1.375rem;
-  height: 1.375rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .social-instagram:hover {
-  background: var(--cor-primaria-escura);
-  border-color: var(--cor-primaria-escura);
-  color: var(--cor-branco);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(79, 102, 71, 0.25);
+  box-shadow: 0 6px 14px rgba(193, 53, 132, 0.35);
+  filter: saturate(1.1) brightness(1.05);
 }
 
 /* ===== RESPONSIVIDADE ===== */
@@ -424,10 +501,6 @@ p {
 
   .logo {
     height: 2.5rem;
-  }
-
-  .btn {
-    width: 100%;
   }
 
   .about-content {
@@ -482,6 +555,15 @@ p {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  .cardapio-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .cardapio-panel {
+    padding: 3.75rem 3.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -506,4 +588,17 @@ p {
 :focus-visible {
   outline: 3px solid var(--cor-acento);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .btn:hover,
+  .product-card:hover,
+  .social-link:hover {
+    transform: none;
+  }
 }

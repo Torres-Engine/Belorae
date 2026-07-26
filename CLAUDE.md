@@ -1,11 +1,11 @@
 # CLAUDE.md — Contexto do Projeto
 
 > Este arquivo é lido automaticamente pela extensão Claude Code no VS Code.
-> Atualizado: 2026-07-26 — Rebuild v1.0.0 publicado, documentação fechada em v1.2.0, simplificação de CTAs em v1.3.0, reversão parcial (WhatsApp no rodapé) em v1.5.0
+> Atualizado: 2026-07-26 — Rebuild v1.0.0 publicado, documentação fechada em v1.2.0, simplificação de CTAs em v1.3.0, reversão parcial (WhatsApp no rodapé) em v1.5.0, segunda reversão parcial (botão "Fazer Pedido" no cardápio) em v1.6.0
 
 ## Status Atual
 
-✅ **Site em Produção** — Versão 1.5.0 ao vivo em https://gplansb.github.io/Belorae-Start-R0/
+✅ **Site em Produção** — Versão 1.6.0 ao vivo em https://gplansb.github.io/Belorae-Start-R0/
 
 - ✅ Reconstruído do zero (Etapa 4 — Camila)
 - ✅ Testado: 11/11 itens do Definition of Done passaram (Etapa 5 — Rafael)
@@ -15,6 +15,7 @@
 - ✅ Documentação atualizada (Etapa 9 — Juliana)
 - ✅ v1.3.0: site simplificado para um único botão ("Ver Cardápio"); os 3 botões de WhatsApp que existiam no site (header, hero, CTA final) foram removidos; o link de WhatsApp passou a ficar só no rodapé do PDF do cardápio; `js/script.js` está vazio (ver `docs/CHANGELOG.md`)
 - ✅ v1.5.0: reversão parcial. O botão único "Ver Cardápio" continua igual, mas o rodapé do site voltou a ter acesso direto ao WhatsApp, agora como ícone (ao lado do ícone de Instagram), por causa da fricção de precisar abrir o PDF para contatar. Também: enquadramento da foto da Jaque ajustado, responsividade mobile revisada e logo do header aumentada (ver `docs/CHANGELOG.md`)
+- ✅ v1.6.0: segunda reversão parcial. A seção Cardápio ganhou o botão "Fazer Pedido" ao lado do botão "Ver Cardápio" (os dois convivem, lado a lado), e o ícone de Instagram do rodapé passou a usar o gradiente oficial da marca em vez do contorno verde da Belorae. Site não tem mais "único botão" (ver `docs/CHANGELOG.md` e `docs/DECISIONS.md`)
 
 ## Fonte única da verdade
 
@@ -31,8 +32,8 @@ Site institucional **one-page** da **Belorae Confeitaria Saudável**. Objetivo �
 - HTML5 + CSS3 + JavaScript puro (vanilla). Sem framework, sem build step.
 - Sem backend. Sem banco de dados.
 - Hospedagem: GitHub Pages (estático).
-- Cardápio: PDF hospedado em `assets/cardapio/`. O botão principal do site é "Ver Cardápio".
-- Pedido: o link `wa.me` com mensagem pré-escrita fica no rodapé do PDF do cardápio e também como ícone de WhatsApp no rodapé do `index.html` (acesso direto, ao lado do ícone de Instagram).
+- Cardápio: PDF hospedado em `assets/cardapio/`. A seção Cardápio do site tem 2 botões lado a lado: "Fazer Pedido" (WhatsApp) e "Ver Cardápio" (abre o PDF).
+- Pedido: o link `wa.me` com mensagem pré-escrita fica em 3 lugares: botão "Fazer Pedido" na seção Cardápio, ícone de WhatsApp no rodapé do `index.html` (ao lado do ícone de Instagram) e rodapé do PDF do cardápio.
 
 ## Estrutura
 
@@ -68,6 +69,8 @@ Plano de rebuild (Seção 12 de SPEC.md):
 Rodada extra depois da Etapa 9 (v1.3.0): Camila simplificou os CTAs do site (um único botão, "Ver Cardápio") e moveu o link de WhatsApp para o rodapé do PDF do cardápio. Detalhes em `docs/CHANGELOG.md` e motivo da decisão em `docs/DECISIONS.md`.
 
 Rodada extra depois disso (v1.5.0): reversão parcial. O botão único "Ver Cardápio" não mudou, mas o rodapé do site voltou a ter um ícone de WhatsApp com acesso direto, ao lado do ícone de Instagram, porque a fricção de precisar abrir o PDF só para contatar era grande demais. Detalhes em `docs/CHANGELOG.md` e motivo em `docs/DECISIONS.md`.
+
+Rodada extra depois disso (v1.6.0): segunda reversão parcial, pedida diretamente pelo dono do projeto. A seção Cardápio ganhou o botão "Fazer Pedido" (WhatsApp) ao lado do botão "Ver Cardápio" (os dois coexistem), e o ícone de Instagram do rodapé passou a usar o gradiente oficial da marca. O site não tem mais "um único botão"; tem 2 na seção Cardápio, mais os ícones do rodapé. Detalhes em `docs/CHANGELOG.md` e motivo em `docs/DECISIONS.md`.
 
 ## Convenções
 
