@@ -43,7 +43,7 @@ Site one-page cujo único objetivo é converter visitantes em pedidos via WhatsA
 |---|---|---|
 | RF-01 | Link de WhatsApp com mensagem pré-escrita vive em 3 lugares: no botão "Fazer Pedido" da seção Cardápio, no botão flutuante fixo de WhatsApp (canto inferior direito da tela) e no rodapé do PDF do cardápio | `wa.me/5541996123682?text=...` abre com o texto exato definido na seção 6.6 nos 3 pontos: botão "Fazer Pedido" (`#cardapio`), botão flutuante de WhatsApp (`.social-float`) e link clicável no rodapé do PDF (gerado por `assets/cardapio/gerar_cardapio.py`) |
 | RF-02 | Seção "Cardápio" tem 2 botões lado a lado: "Fazer Pedido" (abre o WhatsApp com a mensagem da seção 6.6) e "Ver Cardápio" (abre o PDF do cardápio) | Botão "Fazer Pedido" aponta para `wa.me/5541996123682` com o texto exato da seção 6.6; botão "Ver Cardápio" aponta para `assets/cardapio/cardapio-belorae.pdf` e o arquivo existe e abre corretamente |
-| RF-03 | Header exibe o logo real da marca (imagem, não texto) | `<img>` referenciando `assets/logo/belorae-logo-horizontal-fundo-creme.jpg`, proporção original preservada |
+| RF-03 | Header exibe o logo real da marca (imagem, não texto), sobre o fundo verde da cápsula do header (v2.0) | `<img>` referenciando `assets/logo/belorae-logo-horizontal-fundo-verde.jpg`, proporção original preservada |
 | RF-04 | Seção "Sobre" exibe foto da fundadora (Jaque) com legenda | `assets/images/jaque-sobre-v2.jpg` + legenda "Jaque, fundadora da Belorae" |
 | RF-05 | Footer exibe cidade de atuação | Texto "Rio Negro, PR. Atendemos Mafra e região." visível no footer |
 | RF-06 | Ícone de Instagram, como botão flutuante fixo no canto inferior direito da tela, linkando ao perfil da marca, com o gradiente oficial da marca Instagram (não contornado) | Link para `https://www.instagram.com/belorae_confeitaria`, abre em nova aba, `rel="noopener"`, ícone com fundo em gradiente (amarelo, laranja, rosa, roxo) igual ao símbolo oficial do Instagram |
@@ -93,6 +93,17 @@ Diagrama de fluxo, justificativas completas e histórico de decisões: ver `docs
 | `--cor-acento` | `#C98A63` | Terracota — preços, acentos secundários |
 | `--cor-branco` | `#FFFFFF` | Cards, contraste |
 
+**Adendo v2.0 ("Blocos e Cápsulas", ver seção 12 e `docs/CHANGELOG.md` 1.9.0):** o redesign visual implementado pela Camila (direção de Sofia) adicionou 4 tokens novos de cor, sem redefinir nenhum dos 6 tokens acima (eles continuam com o mesmo valor de sempre):
+
+| Token novo | Hex | Uso |
+|---|---|---|
+| `--cor-verde-marca` | `#4A543C` | Verde da cápsula do header e do painel da seção Cardápio (medido por pixel do arquivo `assets/logo/belorae-logo-horizontal-fundo-verde.jpg`) |
+| `--cor-fundo-suave` | `#EFF1E9` | Fundo do bloco da seção Sobre |
+| `--cor-texto-forte` | `#2A1F16` | Texto do botão "Fazer Pedido" (correção de contraste, ver seção 11) |
+| `--cor-ouro` | `#C9A227` | Só decorativo, no glifo "raminho" sobre fundo verde; nunca usado em texto ou botão |
+
+Também foram adicionados tokens de raio de borda (`--raio-medio`, `--raio-grande`, `--raio-bloco`, `--raio-pilula`) e de sombra, usados nos blocos arredondados do redesign. Nenhum deles substitui ou redefine cor da paleta oficial.
+
 ### 6.2 Tipografia
 - Títulos: `Georgia, 'Times New Roman', serif` (site) — coerente com o logo, que usa uma serifada elegante.
 - Corpo: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif` (site).
@@ -105,8 +116,8 @@ Todos em `assets/logo/`, qualidade original preservada (nunca redimensionar de f
 | Arquivo | Descrição | Uso |
 |---|---|---|
 | `belorae-logo-vertical.jpg` | Lockup completo, fundo creme | Materiais impressos, redes sociais |
-| `belorae-logo-horizontal-fundo-creme.jpg` | Horizontal, fundo claro | Header do site |
-| `belorae-logo-horizontal-fundo-verde.jpg` | Horizontal, fundo escuro | Fundos verdes/escuros |
+| `belorae-logo-horizontal-fundo-creme.jpg` | Horizontal, fundo claro | Materiais sobre fundo claro (fora do header, desde o redesign v2.0) |
+| `belorae-logo-horizontal-fundo-verde.jpg` | Horizontal, fundo escuro | Header do site (desde o redesign v2.0, a cápsula do header é verde) e outros fundos verdes/escuros |
 | `belorae-selo-circular.jpg` | Selo com "BELORAE" | Cabeçalho do cardápio em PDF |
 | `belorae-icone-fundo-creme.jpg` | Ícone isolado, fundo claro | Favicon, footer |
 | `belorae-icone-fundo-verde.jpg` | Ícone isolado, fundo escuro | Uso alternativo em fundos escuros |
@@ -139,8 +150,8 @@ Este texto é usado no link `wa.me` em 3 lugares: no botão "Fazer Pedido" da se
 | Hero | Título + subtítulo | Sem botões. Título e subtítulo em `docs/PROJECT_SCOPE.md` / `index.html` atual |
 | Produtos (destaques) | 4 cards com foto, nome, descrição curta | Fotos de exemplo hoje (Pexels) — trocar por fotos reais antes do lançamento |
 | Sobre | Foto da Jaque + legenda + texto institucional | Foto real já recebida (`assets/images/jaque-sobre.jpg`) |
-| Cardápio (seção do site) | Texto curto + 2 botões lado a lado: "Fazer Pedido" (abre o WhatsApp com a mensagem da seção 6.6) e "Ver Cardápio" (abre o PDF) | Não listar produtos direto no HTML — sempre via PDF. O PDF também tem o link de WhatsApp no próprio rodapé (redundância proposital: quem abre o PDF direto, sem passar pelo botão desta seção, ainda encontra o link) |
-| Footer | Ícone/marca + texto institucional + cidade de atuação | Ver RF-05. Não existe mais seção "CTA final". Os ícones de WhatsApp e Instagram não ficam mais no rodapé: são botões flutuantes fixos no canto inferior direito da tela (ver RF-06 e RF-10), visíveis durante toda a rolagem da página. O site tem hoje 3 pontos de acesso ao WhatsApp: botão "Fazer Pedido" na seção Cardápio, botão flutuante fixo, e link dentro do rodapé do PDF |
+| Cardápio (seção do site) | Texto curto + 2 botões lado a lado: "Fazer Pedido" (abre o WhatsApp com a mensagem da seção 6.6) e "Ver Cardápio" (abre o PDF) | Não listar produtos direto no HTML — sempre via PDF. O PDF também tem o link de WhatsApp no próprio rodapé (redundância proposital: quem abre o PDF direto, sem passar pelo botão desta seção, ainda encontra o link). Desde o redesign v2.0, essa seção é um painel de fundo sólido na cor `--cor-verde-marca` (antes era um gradiente), com um glifo SVG decorativo em formato de "raminho" (símbolo `#ico-raminho`, definido inline logo após a abertura do `<body>`) acima do título |
+| Footer | Ícone/marca + texto institucional + cidade de atuação + coluna de navegação | Ver RF-05. Não existe mais seção "CTA final". Os ícones de WhatsApp e Instagram não ficam mais no rodapé: são botões flutuantes fixos no canto inferior direito da tela (ver RF-06 e RF-10), visíveis durante toda a rolagem da página; desde o redesign v2.0 ficam dentro de uma única cápsula creme, em vez de soltos lado a lado. O site tem hoje 3 pontos de acesso ao WhatsApp: botão "Fazer Pedido" na seção Cardápio, botão flutuante fixo, e link dentro do rodapé do PDF. Desde o redesign v2.0, o footer tem 2 colunas: marca (logo, nome, localização) e uma coluna nova "Navegação", com os mesmos 3 links do menu do header (Produtos, Sobre, Cardápio) |
 
 ## 8. Especificação do Cardápio (PDF)
 

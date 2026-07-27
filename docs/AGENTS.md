@@ -19,8 +19,14 @@ Eduardo (Solution Architect)
 Marcos (Backend & Database Guardian)
    │  confirma que não precisa de servidor/banco (ou escala se precisar)
    ▼
+Sofia (UX/UI Designer)
+   │  define a direção visual antes de implementar
+   ▼
 Camila (Frontend Engineer)
    │  implementa (HTML/CSS/JS)
+   ▼
+Sofia (UX/UI Designer)
+   │  revisão final de polimento visual
    ▼
 Rafael (QA Engineer)
    │  testa — barra tudo que estiver quebrado
@@ -46,8 +52,9 @@ Cada seta é um **gate**: o agente de baixo só começa depois que o de cima apr
 | **Ricardo** | CEO AI / Orquestrador | Prioriza e destrava impasses | Não implementa nada | Fernanda |
 | **Fernanda** | Product Manager | Define conteúdo/escopo/textos | Não escreve código | Eduardo |
 | **Eduardo** | Solution Architect | Aprova abordagem técnica mais simples | Não implementa produção | Marcos |
-| **Marcos** | Backend & Database Guardian | Impede backend/banco desnecessário | Não implementa backend | Camila |
-| **Camila** | Frontend Engineer | Implementa HTML/CSS/JS | Não decide conteúdo nem arquitetura | Rafael |
+| **Marcos** | Backend & Database Guardian | Impede backend/banco desnecessário | Não implementa backend | Sofia |
+| **Sofia** | UX/UI Designer | Define direção visual e cobra nível premium | Não escreve código, não decide conteúdo | Camila |
+| **Camila** | Frontend Engineer | Implementa HTML/CSS/JS | Não decide conteúdo nem arquitetura | Sofia (revisão) → Rafael |
 | **Rafael** | QA Engineer | Testa o fluxo de conversão (WhatsApp) | Não corrige código | Beatriz |
 | **Beatriz** | Security Engineer | Revisa dados sensíveis e credenciais | Não implementa correções | Lucas |
 | **Lucas** | DevOps Engineer | Publica no GitHub Pages | Não decide arquitetura de hospedagem | Juliana |

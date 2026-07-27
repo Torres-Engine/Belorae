@@ -1,11 +1,11 @@
 # CLAUDE.md — Contexto do Projeto
 
 > Este arquivo é lido automaticamente pela extensão Claude Code no VS Code.
-> Atualizado: 2026-07-26 — Rebuild v1.0.0 publicado, documentação fechada em v1.2.0, simplificação de CTAs em v1.3.0, reversão parcial (WhatsApp no rodapé) em v1.5.0, segunda reversão parcial (botão "Fazer Pedido" no cardápio) em v1.6.0, ícones viram botões flutuantes fixos em v1.7.0
+> Atualizado: 2026-07-26 — Rebuild v1.0.0 publicado, documentação fechada em v1.2.0, simplificação de CTAs em v1.3.0, reversão parcial (WhatsApp no rodapé) em v1.5.0, segunda reversão parcial (botão "Fazer Pedido" no cardápio) em v1.6.0, ícones viram botões flutuantes fixos em v1.7.0, redesign visual "v2.0 — Blocos e Cápsulas" em v1.9.0
 
 ## Status Atual
 
-✅ **Site em Produção** — Versão 1.7.0 ao vivo em https://gplansb.github.io/Belorae-Start-R0/
+✅ **Site em Produção** — Versão 1.9.0 ao vivo em https://gplansb.github.io/Belorae-Start-R0/
 
 - ✅ Reconstruído do zero (Etapa 4 — Camila)
 - ✅ Testado: 11/11 itens do Definition of Done passaram (Etapa 5 — Rafael)
@@ -17,6 +17,7 @@
 - ✅ v1.5.0: reversão parcial. O botão único "Ver Cardápio" continua igual, mas o rodapé do site voltou a ter acesso direto ao WhatsApp, agora como ícone (ao lado do ícone de Instagram), por causa da fricção de precisar abrir o PDF para contatar. Também: enquadramento da foto da Jaque ajustado, responsividade mobile revisada e logo do header aumentada (ver `docs/CHANGELOG.md`)
 - ✅ v1.6.0: segunda reversão parcial. A seção Cardápio ganhou o botão "Fazer Pedido" ao lado do botão "Ver Cardápio" (os dois convivem, lado a lado), e o ícone de Instagram do rodapé passou a usar o gradiente oficial da marca em vez do contorno verde da Belorae. Site não tem mais "único botão" (ver `docs/CHANGELOG.md` e `docs/DECISIONS.md`)
 - ✅ v1.7.0: os ícones de WhatsApp e Instagram saíram do rodapé e viraram botões flutuantes fixos no canto inferior direito da tela, visíveis durante toda a rolagem da página. O rodapé agora só tem logo, nome da marca e localização. Ícone da logo do rodapé aumentado de 1.5rem para 1.75rem (ver `docs/CHANGELOG.md` e `docs/DECISIONS.md`)
+- ✅ v1.9.0: redesign visual "v2.0 — Blocos e Cápsulas" (direção de Sofia, implementado por Camila). O sistema visual mudou de "faixas empilhadas" para "blocos arredondados sobre fundo creme": header virou cápsula sólida verde flutuante e sticky (nova cor `--cor-verde-marca`, logo trocado para a versão de fundo verde), hero ganhou foto grande com chips flutuantes (Cookies e Brownie), cartões de produto viraram horizontais em mobile, seção Sobre ganhou bloco de fundo suave com moldura na foto da Jaque, seção Cardápio virou painel de cor sólida (era gradiente) com glifo decorativo, rodapé virou bloco marrom com 2 colunas (marca + nova coluna "Navegação"), e os botões flutuantes de WhatsApp/Instagram passaram a ficar dentro de uma única cápsula creme. Nenhuma cor oficial da paleta foi redefinida (só tokens novos adicionados) e nenhum link de contato mudou de destino ou comportamento. Correção de contraste no botão "Fazer Pedido" incluída na mesma entrega (ver `docs/CHANGELOG.md` e `docs/DECISIONS.md`)
 
 ## Fonte única da verdade
 
@@ -34,7 +35,8 @@ Site institucional **one-page** da **Belorae Confeitaria Saudável**. Objetivo �
 - Sem backend. Sem banco de dados.
 - Hospedagem: GitHub Pages (estático).
 - Cardápio: PDF hospedado em `assets/cardapio/`. A seção Cardápio do site tem 2 botões lado a lado: "Fazer Pedido" (WhatsApp) e "Ver Cardápio" (abre o PDF).
-- Pedido: o link `wa.me` com mensagem pré-escrita fica em 3 lugares: botão "Fazer Pedido" na seção Cardápio, botão flutuante fixo de WhatsApp no canto inferior direito da tela (`.social-float`, ao lado do botão flutuante de Instagram, sempre visível durante a rolagem) e rodapé do PDF do cardápio. O rodapé do site (`footer`) não tem mais nenhum ícone de contato, só logo, nome da marca e localização.
+- Pedido: o link `wa.me` com mensagem pré-escrita fica em 3 lugares: botão "Fazer Pedido" na seção Cardápio, botão flutuante fixo de WhatsApp no canto inferior direito da tela (`.social-float`, dentro de uma cápsula única junto com o botão flutuante de Instagram, sempre visível durante a rolagem) e rodapé do PDF do cardápio. O rodapé do site (`footer`) não tem mais nenhum ícone de contato; desde a v1.9.0, ele tem 2 colunas: marca (logo, nome, localização) e uma coluna "Navegação" com os mesmos 3 links do menu do header.
+- Visual: desde a v1.9.0 ("v2.0 — Blocos e Cápsulas"), o site usa um sistema de blocos arredondados sobre fundo creme (header em cápsula verde, painel sólido na seção Cardápio, bloco suave na seção Sobre). Paleta de cores oficial (`docs/PROJECT_SCOPE.md` e SPEC.md 6.1) não mudou; foram só adicionados tokens novos de cor e de raio de borda em `css/style.css` (`:root`).
 
 ## Estrutura
 
@@ -74,6 +76,8 @@ Rodada extra depois disso (v1.5.0): reversão parcial. O botão único "Ver Card
 Rodada extra depois disso (v1.6.0): segunda reversão parcial, pedida diretamente pelo dono do projeto. A seção Cardápio ganhou o botão "Fazer Pedido" (WhatsApp) ao lado do botão "Ver Cardápio" (os dois coexistem), e o ícone de Instagram do rodapé passou a usar o gradiente oficial da marca. O site não tem mais "um único botão"; tem 2 na seção Cardápio, mais os ícones do rodapé. Detalhes em `docs/CHANGELOG.md` e motivo em `docs/DECISIONS.md`.
 
 Rodada extra depois disso (v1.7.0): os ícones de WhatsApp e Instagram saíram do rodapé e viraram botões flutuantes fixos no canto inferior direito da tela, sempre visíveis durante a rolagem da página, pedido diretamente pelo dono do projeto para dar acesso mais rápido ao contato. O rodapé passou a ter só logo, nome da marca e localização. Detalhes em `docs/CHANGELOG.md` e motivo em `docs/DECISIONS.md`.
+
+Rodada extra depois disso (v1.9.0): redesign visual completo, "v2.0 — Blocos e Cápsulas", a partir de uma referência visual trazida pelo dono do projeto e adaptada por Sofia à paleta de cores já existente da Belorae. Implementado por Camila, aprovado por Rafael (QA). Header, hero, cartões de produto, seção Sobre, seção Cardápio, rodapé e botões flutuantes ganharam a nova linguagem visual de blocos arredondados; nenhuma cor oficial da paleta foi redefinida e nenhum link de contato mudou de destino ou comportamento. Detalhes em `docs/CHANGELOG.md` e motivo em `docs/DECISIONS.md`.
 
 ## Convenções
 

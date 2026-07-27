@@ -1,5 +1,39 @@
 # CHANGELOG.md
 
+## [1.9.0] — 2026-07-26 — Redesign visual "v2.0 — Blocos e Cápsulas"
+
+### Alterado
+- Todo o sistema visual do site mudou de "faixas empilhadas" para "blocos arredondados sobre fundo creme", brief de Sofia (UX/UI), implementado por Camila em `index.html` e `css/style.css`
+- Header virou uma cápsula sólida verde, flutuante e sticky no topo da página. Nova cor de marca, `--cor-verde-marca` (`#4A543C`), medida por pixel do arquivo `assets/logo/belorae-logo-horizontal-fundo-verde.jpg`. O header trocou o logo de fundo creme pelo logo de fundo verde (`belorae-logo-horizontal-fundo-verde.jpg`), já que agora fica sobre um fundo escuro
+- Hero ganhou uma foto grande, com dois "chips" flutuantes ao lado mostrando Cookies Sem Glúten e Brownie Fit de Amêndoas
+- Cartões de produto (seção Destaques) viraram horizontais em telas pequenas (foto ao lado do texto, não em cima)
+- Seção Sobre ganhou um bloco de fundo com a cor nova `--cor-fundo-suave`, com uma moldura branca ao redor da foto da Jaque; o recorte da foto também mudou, mostrando mais dela
+- Seção Cardápio virou um painel de fundo sólido na cor `--cor-verde-marca` (antes era um gradiente), com um glifo SVG decorativo em formato de "raminho" acima do título (símbolo `#ico-raminho`, definido inline logo depois da abertura do `<body>`, reaproveitado também acima de "Destaques")
+- Rodapé virou um bloco marrom (`--cor-texto`) com 2 colunas: marca (logo, nome, localização) e uma coluna nova, "Navegação", com os mesmos 3 links do menu do header (Produtos, Sobre, Cardápio)
+- Os botões flutuantes de WhatsApp e Instagram, que antes ficavam soltos lado a lado no canto inferior direito, agora ficam dentro de uma única cápsula creme (`.social-float`)
+
+### Corrigido
+- Contraste do texto do botão "Fazer Pedido" estava abaixo do mínimo AA (4.48:1, o exigido é 4.5:1). Corrigido trocando a cor do texto para o token novo `--cor-texto-forte` (`#2A1F16`), sem mudar a cor de fundo do botão
+
+### Adicionado
+- 4 tokens de cor novos em `:root`: `--cor-verde-marca`, `--cor-fundo-suave`, `--cor-texto-forte`, `--cor-ouro` (este último só decorativo, usado no glifo sobre fundo verde, nunca em texto ou botão). Nenhum dos 6 tokens de cor já existentes (`--cor-fundo`, `--cor-primaria`, `--cor-primaria-escura`, `--cor-texto`, `--cor-acento`, `--cor-branco`) foi redefinido
+- Tokens novos de raio de borda (`--raio-medio`, `--raio-grande`, `--raio-bloco`, `--raio-pilula`) e de sombra, usados nos blocos arredondados do redesign
+
+### Testado
+- Rafael (QA) aprovou o redesign completo. Sinalizou, como observação de rastreabilidade (não bug): `SPEC.md` RF-03 ainda citava o logo de fundo creme no header (agora é fundo verde), e a seção 7 (Footer) não mencionava a coluna "Navegação" nem o painel de Cardápio ter virado cor sólida. Ambos os pontos corrigidos nesta entrega
+- Nenhum link de WhatsApp ou Instagram mudou de destino, comportamento ou atributo (`target`, `rel="noopener"`); confirmado pelo Rafael. Mudou só o estilo visual ao redor
+- `js/script.js` continua vazio: nada no redesign precisou de JavaScript
+
+### Documentação
+- `SPEC.md`: RF-03 corrigido (logo do header agora é o de fundo verde); seção 6.1 ganhou um adendo documentando os 4 tokens de cor novos, deixando explícito que os tokens originais não mudaram; seção 6.3 (tabela de uso do logo) corrigida para refletir a troca do header; seção 7 atualizada (linha Cardápio: painel sólido em vez de gradiente; linha Footer: nova coluna de navegação)
+- `docs/DECISIONS.md`: nova entrada registrando o motivo do redesign (referência visual trazida pelo dono do projeto, adaptada com a paleta de cores já existente da Belorae)
+- `README.md` e `CLAUDE.md` atualizados para a versão 1.9.0
+
+### Notes
+- Motivo: o dono do projeto trouxe uma referência visual de layout que gostou (blocos arredondados, cápsulas, painéis de cor sólida) e pediu para aplicar esse estilo ao site, sem trocar a identidade de cores da Belorae. Sofia adaptou a referência usando a paleta já aprovada (nenhuma cor oficial foi trocada, só adicionados tokens novos para os elementos que a paleta original não cobria, como o verde do header)
+- Projetado por Sofia, implementado por Camila, aprovado por Rafael (QA), sem bloqueadores
+- Decisão de produto registrada em `docs/DECISIONS.md`
+
 ## [1.8.0] — 2026-07-26 — Novo time: Equipe de Negócio da Belorae
 
 ### Adicionado

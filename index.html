@@ -9,10 +9,21 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header Sticky: Logo + Nav -->
+    <!-- Sprite com o glifo decorativo (raminho). Não aparece sozinho, só via <use>. -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="ico-raminho" viewBox="0 0 32 20">
+            <path d="M16 18 C16 10.5 10 4.5 2 3.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16 18 C16 10.5 22 4.5 30 3.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <ellipse cx="7.5" cy="7" rx="3.4" ry="1.8" transform="rotate(-26 7.5 7)" fill="currentColor"/>
+            <ellipse cx="24.5" cy="7" rx="3.4" ry="1.8" transform="rotate(26 24.5 7)" fill="currentColor"/>
+            <circle cx="16" cy="6.4" r="1.6" fill="currentColor"/>
+        </symbol>
+    </svg>
+
+    <!-- Header Sticky: cápsula verde com Logo + Nav -->
     <header class="header">
         <div class="header-content">
-            <img src="assets/logo/belorae-logo-horizontal-fundo-creme.jpg" alt="Belorae Confeitaria Saudável" class="logo" width="1600" height="551">
+            <img src="assets/logo/belorae-logo-horizontal-fundo-verde.jpg" alt="Belorae Confeitaria Saudável" class="logo" width="1599" height="550">
             <nav class="nav">
                 <a href="#produtos">Produtos</a>
                 <a href="#sobre">Sobre</a>
@@ -23,34 +34,65 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-content">
-            <h1>Confeitaria saudável, feita para durar no seu dia.</h1>
-            <p>Bolos, doces e salgados fit com ingredientes naturais, sem açúcar refinado e sem glúten. Pedido simples, direto pelo WhatsApp.</p>
+        <div class="hero-grid">
+            <div class="hero-texto">
+                <p class="rotulo">Confeitaria artesanal em Rio Negro, PR</p>
+                <h1>Confeitaria saudável, feita para durar no seu dia.</h1>
+                <p class="hero-lead">Bolos, doces e salgados fit com ingredientes naturais, sem açúcar refinado e sem glúten. Pedido simples, direto pelo WhatsApp.</p>
+            </div>
+            <div class="hero-media">
+                <img class="hero-foto" src="assets/images/bolo-cenoura-placeholder.jpg" alt="Bolo Integral de Cenoura da Belorae" fetchpriority="high" decoding="async">
+                <div class="hero-chip hero-chip-a">
+                    <img src="assets/images/cookies-placeholder.jpg" alt="">
+                    <div>
+                        <div class="hero-chip-nome">Cookies Sem Glúten</div>
+                        <div class="hero-chip-tag">Sem glúten</div>
+                    </div>
+                </div>
+                <div class="hero-chip hero-chip-b">
+                    <img src="assets/images/brownie-placeholder.jpg" alt="">
+                    <div>
+                        <div class="hero-chip-nome">Brownie Fit de Amêndoas</div>
+                        <div class="hero-chip-tag">Sem açúcar refinado</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Seção Produtos (4 cards) -->
     <section class="produtos" id="produtos">
         <div class="produtos-content">
-            <h2>Destaques</h2>
+            <div class="produtos-cabecalho">
+                <svg class="raminho" aria-hidden="true" focusable="false"><use href="#ico-raminho"/></svg>
+                <h2>Destaques</h2>
+            </div>
             <div class="produtos-grid">
-                <article class="product-card">
-                    <img src="assets/images/bolo-cenoura-placeholder.jpg" alt="Bolo Integral de Cenoura">
+                <article class="product-card card-bolo">
+                    <div class="product-card-media">
+                        <img src="assets/images/bolo-cenoura-placeholder.jpg" alt="Bolo Integral de Cenoura">
+                    </div>
                     <h3>Bolo Integral de Cenoura</h3>
                     <p>Feito com cenoura fresca e adoçado naturalmente. Perfeito para quem busca sabor e saúde.</p>
                 </article>
-                <article class="product-card">
-                    <img src="assets/images/cookies-placeholder.jpg" alt="Cookies Sem Glúten">
+                <article class="product-card card-cookies">
+                    <div class="product-card-media">
+                        <img src="assets/images/cookies-placeholder.jpg" alt="Cookies Sem Glúten">
+                    </div>
                     <h3>Cookies Sem Glúten</h3>
                     <p>Crocante por fora, macio por dentro. Uma opção deliciosa para quem tem restrição alimentar.</p>
                 </article>
-                <article class="product-card">
-                    <img src="assets/images/brownie-placeholder.jpg" alt="Brownie Fit de Amêndoas">
+                <article class="product-card card-brownie">
+                    <div class="product-card-media">
+                        <img src="assets/images/brownie-placeholder.jpg" alt="Brownie Fit de Amêndoas">
+                    </div>
                     <h3>Brownie Fit de Amêndoas</h3>
                     <p>Intenso em sabor de chocolate com a crocância das amêndoas. Um verdadeiro doce nutritivo.</p>
                 </article>
-                <article class="product-card">
-                    <img src="assets/images/cheesecake-placeholder.jpg" alt="Cheesecake Proteico de Frutas Vermelhas">
+                <article class="product-card card-cheesecake">
+                    <div class="product-card-media">
+                        <img src="assets/images/cheesecake-placeholder.jpg" alt="Cheesecake Proteico de Frutas Vermelhas">
+                    </div>
                     <h3>Cheesecake Proteico de Frutas Vermelhas</h3>
                     <p>Cremoso e leve, com frutas vermelhas frescas. Sem culpa, só prazer.</p>
                 </article>
@@ -60,12 +102,17 @@
 
     <!-- Seção Sobre -->
     <section class="about" id="sobre">
-        <div class="about-content">
-            <img src="assets/images/jaque-sobre-v2.jpg" alt="Jaque, fundadora da Belorae" class="about-image">
-            <div class="about-text">
-                <h2>Sobre Belorae</h2>
-                <p class="founder-name">Jaque, fundadora da Belorae</p>
-                <p>A Belorae é uma confeitaria dedicada a doces feitos com ingredientes naturais. São doces sem açúcar refinado, sem glúten quando possível, sempre com sabor de verdade. Cada produto é preparado por encomenda, em pequenos lotes, para chegar fresquinho até você. A ideia é simples: doce bom não precisa pesar na consciência.</p>
+        <div class="about-bloco">
+            <div class="about-content">
+                <div class="about-media">
+                    <img src="assets/images/jaque-sobre-v2.jpg" alt="Jaque, fundadora da Belorae" class="about-image">
+                </div>
+                <div class="about-text">
+                    <p class="rotulo">Quem faz</p>
+                    <h2>Sobre Belorae</h2>
+                    <p class="founder-name">Jaque, fundadora da Belorae</p>
+                    <p>A Belorae é uma confeitaria dedicada a doces feitos com ingredientes naturais. São doces sem açúcar refinado, sem glúten quando possível, sempre com sabor de verdade. Cada produto é preparado por encomenda, em pequenos lotes, para chegar fresquinho até você. A ideia é simples: doce bom não precisa pesar na consciência.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -73,6 +120,7 @@
     <!-- Seção Cardápio -->
     <section class="cardapio-section" id="cardapio">
         <div class="cardapio-panel">
+            <svg class="raminho" aria-hidden="true" focusable="false"><use href="#ico-raminho"/></svg>
             <h2>Cardápio Completo</h2>
             <p>Confira todos os produtos, sabores e preços no nosso cardápio.</p>
             <div class="cardapio-buttons">
@@ -84,12 +132,20 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <img src="assets/logo/belorae-icone-fundo-creme.jpg" alt="Belorae" class="footer-icon">
-            <div class="footer-info">
+        <div class="footer-grid">
+            <div class="footer-brand-col">
+                <img src="assets/logo/belorae-icone-fundo-creme.jpg" alt="Belorae" class="footer-icon">
                 <p class="footer-brand">Belorae Confeitaria Saudável. Encomendas via WhatsApp.</p>
                 <p class="footer-location">Rio Negro, PR. Atendemos Mafra e região.</p>
             </div>
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <p class="footer-nav-titulo">Navegação</p>
+                <ul>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#cardapio">Cardápio</a></li>
+                </ul>
+            </nav>
         </div>
     </footer>
 

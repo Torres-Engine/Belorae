@@ -2,6 +2,14 @@
 
 Registro de decisões técnicas importantes — para lembrar o "porquê" no futuro.
 
+## 2026-07-26 — Redesign visual "v2.0 — Blocos e Cápsulas"
+
+**Contexto:** O dono do projeto trouxe uma referência visual de outro site/layout que gostou: blocos arredondados, cápsulas flutuantes e painéis de cor sólida, em vez do estilo anterior de "faixas empilhadas" (seções retangulares simples, uma embaixo da outra).
+**Decisão:** Aplicar esse estilo de layout ao site da Belorae, mantendo a paleta de cores oficial (SPEC.md 6.1) intacta. O header virou uma cápsula sólida verde flutuante e sticky; o hero ganhou uma foto grande com chips flutuantes; os cartões de produto viraram horizontais em mobile; a seção Sobre ganhou um bloco de fundo suave com moldura na foto da Jaque; a seção Cardápio virou um painel de cor sólida com um glifo decorativo; o rodapé virou um bloco com 2 colunas (marca + navegação); e os botões flutuantes de contato passaram a ficar dentro de uma única cápsula. Para viabilizar isso sem redefinir as cores oficiais, foram adicionados 4 tokens novos (`--cor-verde-marca`, `--cor-fundo-suave`, `--cor-texto-forte`, `--cor-ouro`) mais tokens de raio e sombra.
+**Motivo:** O dono do projeto queria o visual mais moderno e "premium" da referência trazida, sem perder a identidade de cores já aprovada da Belorae (a mesma preocupação que motivou a criação da Sofia como agente). Sofia adaptou a referência à paleta existente, em vez de simplesmente copiar as cores da referência.
+**Detalhe:** Direção visual de Sofia, implementação de Camila, aprovado por Rafael (QA) sem bloqueadores; correção de contraste do botão "Fazer Pedido" (estava abaixo do mínimo AA) feita na mesma entrega, usando o novo token `--cor-texto-forte`.
+**Revisitar se:** o dono do projeto trouxer uma nova referência visual, ou se algum elemento do redesign (por exemplo, o painel sólido da seção Cardápio) se mostrar menos eficaz para conversão do que o formato anterior.
+
 ## 2026-07-26 — Criação do Time de Negócio (separado do time técnico)
 
 **Decisão:** Criar um segundo time de 9 agentes (Marina, CEO do Negócio, mais 8 setores: Vitor, Patrícia, Renato, Bianca, Diego, Helena, Otávio, Fabiana), independente do time técnico que cuida do site.
