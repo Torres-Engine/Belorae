@@ -2,6 +2,20 @@
 
 Registro de decisões técnicas importantes — para lembrar o "porquê" no futuro.
 
+## 2026-07-26 — Salgados voltam ao cardápio (supera decisão anterior)
+
+**Contexto:** Na mesma rodada de reestruturação do cardápio (ver decisão "Cardápio reestruturado com base em referência de mercado", acima), a categoria "Salgados" tinha sido removida do escopo.
+**Decisão:** O dono do projeto pediu para incluir 2 itens salgados específicos: Mini Pão Sírio de Frango com Alface, Requeijão e Cenoura, e Sanduíche Natural em 2 sabores (frango e atum).
+**Motivo:** Não deixar de atender esse público de cliente, mesmo com o foco principal do cardápio em doces.
+**Revisitar se:** o negócio quiser expandir ainda mais a linha salgada no futuro.
+
+## 2026-07-26 — Cardápio reestruturado com base em referência de mercado
+
+**Contexto:** O dono do projeto trouxe o cardápio de uma confeitaria saudável concorrente como referência e pediu para usar como inspiração para definir o cardápio real da Belorae.
+**Decisão:** Cardápio reorganizado em 4 categorias (Bolos, Brownies, Bolachas, Doces e Brigadeiros), com nomes, descrições, preços e fotos próprios da Belorae, sem copiar texto do concorrente. Categorias "Sem açúcar / diet" e "Salgados" removidas do escopo desta rodada.
+**Motivo:** O dono decidiu focar primeiro nas categorias mais centrais da confeitaria (doces assados e brigadeiros), deixando salgados para uma fase futura.
+**Revisitar se:** o negócio decidir entrar em salgados, ou se quiser adicionar uma linha "zero açúcar" separada como o concorrente tem.
+
 ## 2026-07-26 — Redesign visual "v2.0 — Blocos e Cápsulas"
 
 **Contexto:** O dono do projeto trouxe uma referência visual de outro site/layout que gostou: blocos arredondados, cápsulas flutuantes e painéis de cor sólida, em vez do estilo anterior de "faixas empilhadas" (seções retangulares simples, uma embaixo da outra).

@@ -2,7 +2,20 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "WebFetch(domain:www.pexels.com)"
+      "WebFetch(domain:www.pexels.com)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\" remote -v)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\" config --get remote.origin.url)",
+      "PowerShell(& \"$env:ProgramFiles\\\\Git\\\\cmd\\\\git.exe\" status 2>&1; if \\(-not $?\\) { Get-Command git -ErrorAction SilentlyContinue })",
+      "PowerShell(Get-Command git -All -ErrorAction SilentlyContinue; Get-ChildItem \"C:\\\\Program Files\\\\Git\",\"C:\\\\Program Files \\(x86\\)\\\\Git\",\"$env:LOCALAPPDATA\\\\Programs\\\\Git\" -ErrorAction SilentlyContinue -Recurse -Filter \"git.exe\" | Select-Object -First 5 FullName)",
+      "Read(//c/Users/Gabriel Torres/AppData/Local/GitHubDesktop/**)",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\Gabriel Torres\\\\OneDrive\\\\Desktop\\\\Belorae Start R0\\\\assets\\\\images\\\\cardapio\")",
+      "Read(//c/Windows/Fonts/**)",
+      "PowerShell(Get-Command python3 -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command py -ErrorAction SilentlyContinue)",
+      "PowerShell(wsl --list 2>$null)",
+      "Read(//c/Users/Gabriel Torres/AppData/Local/Programs/**)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Gabriel Torres\\\\OneDrive\\\\Desktop\\\\Belorae Start R0\" -Recurse -Filter \"python.exe\" -ErrorAction SilentlyContinue | Select-Object FullName; Get-ChildItem \"C:\\\\Users\\\\Gabriel Torres\" -Directory -ErrorAction SilentlyContinue | Where-Object {$_.Name -match \"python|conda|venv\"}; Get-ChildItem \"C:\\\\Users\\\\Gabriel Torres\\\\OneDrive\\\\Desktop\\\\Belorae Start R0\" -Directory)",
+      "PowerShell(Test-Path \"C:\\\\Windows\\\\py.exe\"; Get-ChildItem \"C:\\\\Users\\\\Gabriel Torres\\\\AppData\\\\Local\\\\Programs\" -Directory -ErrorAction SilentlyContinue; Get-ChildItem \"C:\\\\Program Files\" -Directory -ErrorAction SilentlyContinue | Where-Object {$_.Name -match \"python\"}; Get-ChildItem \"C:\\\\Program Files \\(x86\\)\" -Directory -ErrorAction SilentlyContinue | Where-Object {$_.Name -match \"python\"})"
     ]
   }
 }

@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Belorae Confeitaria Saudável. Doces feitos com ingredientes naturais, sem açúcar refinado e sem glúten. Faça seu pedido direto pelo WhatsApp.">
+    <meta name="description" content="Belorae Confeitaria Saudável. Bolos, doces e salgados feitos à mão, em pequenos lotes, com carinho e sem açúcar refinado. Faça seu pedido direto pelo WhatsApp.">
     <title>Belorae Confeitaria Saudável</title>
     <link rel="icon" href="assets/logo/belorae-icone-fundo-creme.jpg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Barra fina de progresso de rolagem, largura controlada via JS -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
     <!-- Sprite com o glifo decorativo (raminho). Não aparece sozinho, só via <use>. -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
         <symbol id="ico-raminho" viewBox="0 0 32 20">
@@ -37,16 +40,16 @@
         <div class="hero-grid">
             <div class="hero-texto">
                 <p class="rotulo">Confeitaria artesanal em Rio Negro, PR</p>
-                <h1>Confeitaria saudável, feita para durar no seu dia.</h1>
-                <p class="hero-lead">Bolos, doces e salgados fit com ingredientes naturais, sem açúcar refinado e sem glúten. Pedido simples, direto pelo WhatsApp.</p>
+                <h1>Feito com carinho, para adoçar o seu dia sem pesar.</h1>
+                <p class="hero-lead">Bolos, doces e salgados fit, feitos à mão em pequenos lotes, com carinho e sem açúcar refinado. Pedido simples, direto pelo WhatsApp.</p>
             </div>
             <div class="hero-media">
                 <img class="hero-foto" src="assets/images/bolo-cenoura-placeholder.jpg" alt="Bolo Integral de Cenoura da Belorae" fetchpriority="high" decoding="async">
                 <div class="hero-chip hero-chip-a">
                     <img src="assets/images/cookies-placeholder.jpg" alt="">
                     <div>
-                        <div class="hero-chip-nome">Cookies Sem Glúten</div>
-                        <div class="hero-chip-tag">Sem glúten</div>
+                        <div class="hero-chip-nome">Cookies de Aveia e Castanhas</div>
+                        <div class="hero-chip-tag">Feito à mão</div>
                     </div>
                 </div>
                 <div class="hero-chip hero-chip-b">
@@ -73,28 +76,28 @@
                         <img src="assets/images/bolo-cenoura-placeholder.jpg" alt="Bolo Integral de Cenoura">
                     </div>
                     <h3>Bolo Integral de Cenoura</h3>
-                    <p>Feito com cenoura fresca e adoçado naturalmente. Perfeito para quem busca sabor e saúde.</p>
+                    <p>Feito com cenoura fresca, numa receita que já virou queridinha da casa. Sem açúcar refinado.</p>
                 </article>
                 <article class="product-card card-cookies">
                     <div class="product-card-media">
-                        <img src="assets/images/cookies-placeholder.jpg" alt="Cookies Sem Glúten">
+                        <img src="assets/images/cookies-placeholder.jpg" alt="Cookies de Aveia e Castanhas">
                     </div>
-                    <h3>Cookies Sem Glúten</h3>
-                    <p>Crocante por fora, macio por dentro. Uma opção deliciosa para quem tem restrição alimentar.</p>
+                    <h3>Cookies de Aveia e Castanhas</h3>
+                    <p>Crocante por fora, macio por dentro. Feito à mão, em pequenos lotes, com carinho.</p>
                 </article>
                 <article class="product-card card-brownie">
                     <div class="product-card-media">
                         <img src="assets/images/brownie-placeholder.jpg" alt="Brownie Fit de Amêndoas">
                     </div>
                     <h3>Brownie Fit de Amêndoas</h3>
-                    <p>Intenso em sabor de chocolate com a crocância das amêndoas. Um verdadeiro doce nutritivo.</p>
+                    <p>Intenso em sabor de chocolate com a crocância das amêndoas. Um mimo pra chamar de seu.</p>
                 </article>
-                <article class="product-card card-cheesecake">
+                <article class="product-card card-trufa">
                     <div class="product-card-media">
-                        <img src="assets/images/cheesecake-placeholder.jpg" alt="Cheesecake Proteico de Frutas Vermelhas">
+                        <img src="assets/images/cardapio/trufa-placeholder.png" alt="Trufa de Cacau 70% com Castanha-do-Pará">
                     </div>
-                    <h3>Cheesecake Proteico de Frutas Vermelhas</h3>
-                    <p>Cremoso e leve, com frutas vermelhas frescas. Sem culpa, só prazer.</p>
+                    <h3>Trufa de Cacau 70% com Castanha-do-Pará</h3>
+                    <p>Intensa em cacau, com o crocante da castanha-do-pará. Um doce sofisticado em cada mordida.</p>
                 </article>
             </div>
         </div>
@@ -111,7 +114,7 @@
                     <p class="rotulo">Quem faz</p>
                     <h2>Sobre Belorae</h2>
                     <p class="founder-name">Jaque, fundadora da Belorae</p>
-                    <p>A Belorae é uma confeitaria dedicada a doces feitos com ingredientes naturais. São doces sem açúcar refinado, sem glúten quando possível, sempre com sabor de verdade. Cada produto é preparado por encomenda, em pequenos lotes, para chegar fresquinho até você. A ideia é simples: doce bom não precisa pesar na consciência.</p>
+                    <p>A Belorae nasceu do desejo de unir a arte da confeitaria ao bem-estar, criando produtos que combinam sabor marcante, leveza e cuidado. Cada bolo, doce ou salgado é fruto de uma curadoria atenta de ingredientes e de um processo artesanal focado na qualidade: tudo é preparado sob encomenda, em pequenos lotes, priorizando receitas sem açúcar refinado e com opções voltadas a restrições alimentares. Sempre com atenção a cada detalhe para chegar impecável e fresquinho até você. Mais do que uma receita, é uma experiência de carinho em cada mordida.</p>
                 </div>
             </div>
         </div>
@@ -130,6 +133,30 @@
         </div>
     </section>
 
+    <!-- Seção Festas e Eventos: cardápio voltado a quem não busca especificamente fit/saudável -->
+    <section class="festas" id="festas">
+        <div class="festas-bloco">
+            <span class="festas-badge">Sob consulta</span>
+            <h2>Cardápio para Empresas, Festas e Eventos</h2>
+            <p>Além da linha saudável do dia a dia, a Belorae também atende encomendas maiores e ocasiões especiais, para quem busca sabor e apresentação, não só a versão fit. Disponibilidade e valor sob consulta, já que cada pedido é diferente.</p>
+            <div class="festas-grid">
+                <article class="festas-item">
+                    <h3>Empresas</h3>
+                    <p>Coffee break, reuniões e brindes corporativos, com opções em quantidade para toda a equipe.</p>
+                </article>
+                <article class="festas-item">
+                    <h3>Festas Infantis</h3>
+                    <p>Bolos temáticos, docinhos e mesa de doces para aniversários e festas infantis.</p>
+                </article>
+                <article class="festas-item">
+                    <h3>Casamentos e Eventos</h3>
+                    <p>Bolos personalizados e docinhos para casamentos, formaturas e outras celebrações.</p>
+                </article>
+            </div>
+            <a href="https://wa.me/5541996123682?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Belorae%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener" class="btn btn-primary">Consultar pelo WhatsApp</a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-grid">
@@ -137,6 +164,7 @@
                 <img src="assets/logo/belorae-icone-fundo-creme.jpg" alt="Belorae" class="footer-icon">
                 <p class="footer-brand">Belorae Confeitaria Saudável. Encomendas via WhatsApp.</p>
                 <p class="footer-location">Rio Negro, PR. Atendemos Mafra e região.</p>
+                <p class="footer-copyright">© 2026 Belorae Confeitaria Saudável. Todos os direitos reservados.</p>
             </div>
             <nav class="footer-nav" aria-label="Navegação do rodapé">
                 <p class="footer-nav-titulo">Navegação</p>
@@ -162,5 +190,14 @@
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.465 3.63"/></svg>
         </a>
     </div>
+
+    <!-- Botão flutuante voltar ao topo: some/aparece via JS conforme a rolagem -->
+    <button type="button" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

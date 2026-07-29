@@ -47,7 +47,7 @@ Site one-page cujo único objetivo é converter visitantes em pedidos via WhatsA
 | RF-04 | Seção "Sobre" exibe foto da fundadora (Jaque) com legenda | `assets/images/jaque-sobre-v2.jpg` + legenda "Jaque, fundadora da Belorae" |
 | RF-05 | Footer exibe cidade de atuação | Texto "Rio Negro, PR. Atendemos Mafra e região." visível no footer |
 | RF-06 | Ícone de Instagram, como botão flutuante fixo no canto inferior direito da tela, linkando ao perfil da marca, com o gradiente oficial da marca Instagram (não contornado) | Link para `https://www.instagram.com/belorae_confeitaria`, abre em nova aba, `rel="noopener"`, ícone com fundo em gradiente (amarelo, laranja, rosa, roxo) igual ao símbolo oficial do Instagram |
-| RF-07 | Cardápio em PDF lista todos os produtos com nome, descrição, preço e foto | Ver seção 7 — 8 itens em 4 categorias, cada um com foto quadrada |
+| RF-07 | Cardápio em PDF lista todos os produtos com nome, descrição, preço e foto | Ver seção 8 — 27 itens em 5 categorias, cada um com foto quadrada (quando disponível), mais bloco informativo "Festas e Eventos" sem preço |
 | RF-08 | Site 100% responsivo (mobile-first) | Layout íntegro em telas de 375px a 1440px, sem scroll horizontal |
 | RF-09 | Favicon reflete a marca | `<link rel="icon">` aponta para um dos ícones em `assets/logo/` |
 | RF-10 | Ícone de WhatsApp com acesso direto, como botão flutuante fixo no canto inferior direito da tela, ao lado do botão flutuante de Instagram | SVG inline em verde oficial `#25D366`, linkando para `wa.me/5541996123682?text=...` com a mensagem da seção 6.6, abre em nova aba, `rel="noopener"` |
@@ -151,6 +151,7 @@ Este texto é usado no link `wa.me` em 3 lugares: no botão "Fazer Pedido" da se
 | Produtos (destaques) | 4 cards com foto, nome, descrição curta | Fotos de exemplo hoje (Pexels) — trocar por fotos reais antes do lançamento |
 | Sobre | Foto da Jaque + legenda + texto institucional | Foto real já recebida (`assets/images/jaque-sobre.jpg`) |
 | Cardápio (seção do site) | Texto curto + 2 botões lado a lado: "Fazer Pedido" (abre o WhatsApp com a mensagem da seção 6.6) e "Ver Cardápio" (abre o PDF) | Não listar produtos direto no HTML — sempre via PDF. O PDF também tem o link de WhatsApp no próprio rodapé (redundância proposital: quem abre o PDF direto, sem passar pelo botão desta seção, ainda encontra o link). Desde o redesign v2.0, essa seção é um painel de fundo sólido na cor `--cor-verde-marca` (antes era um gradiente), com um glifo SVG decorativo em formato de "raminho" (símbolo `#ico-raminho`, definido inline logo após a abertura do `<body>`) acima do título |
+| Festas e Eventos | Selo "Sob consulta" + título + frase curta + botão "Consultar pelo WhatsApp" | Serviço real (não promessa futura): bolos e docinhos personalizados para aniversários, casamentos e eventos empresariais, sem preço fixo em catálogo (cada pedido é diferente). Sem tabela de produtos nesta seção. Botão usa o mesmo número/mensagem de WhatsApp da seção 6.6. Ver detalhe completo na seção 8 deste documento |
 | Footer | Ícone/marca + texto institucional + cidade de atuação + coluna de navegação | Ver RF-05. Não existe mais seção "CTA final". Os ícones de WhatsApp e Instagram não ficam mais no rodapé: são botões flutuantes fixos no canto inferior direito da tela (ver RF-06 e RF-10), visíveis durante toda a rolagem da página; desde o redesign v2.0 ficam dentro de uma única cápsula creme, em vez de soltos lado a lado. O site tem hoje 3 pontos de acesso ao WhatsApp: botão "Fazer Pedido" na seção Cardápio, botão flutuante fixo, e link dentro do rodapé do PDF. Desde o redesign v2.0, o footer tem 2 colunas: marca (logo, nome, localização) e uma coluna nova "Navegação", com os mesmos 3 links do menu do header (Produtos, Sobre, Cardápio) |
 
 ## 8. Especificação do Cardápio (PDF)
@@ -160,15 +161,36 @@ Gerado por `assets/cardapio/gerar_cardapio.py`. Estrutura de dados (categoria �
 | Categoria | Item | Preço | Foto |
 |---|---|---|---|
 | Bolos | Bolo Integral de Cenoura | Fatia R$ 12 / Inteiro R$ 65 | `assets/images/bolo-cenoura-placeholder.jpg` |
+| Bolos | Bolo de Chocolate com Amêndoas | Fatia R$ 13 / Inteiro R$ 68 | `assets/images/cardapio/bolo-chocolate-placeholder.jpg` |
 | Bolos | Bolo Vegano de Banana com Canela | Fatia R$ 12 / Inteiro R$ 60 | `assets/images/cardapio/banana-canela-placeholder.jpg` |
-| Doces individuais | Brownie Fit de Amêndoas | Unidade R$ 9 / Caixa 6 R$ 48 | `assets/images/brownie-placeholder.jpg` |
-| Doces individuais | Cookies Sem Glúten | Unidade R$ 7 / Pacote 4 R$ 24 | `assets/images/cookies-placeholder.jpg` |
-| Doces individuais | Trufa de Cacau 70% com Castanha-do-Pará | Unidade R$ 6 / Caixa 6 R$ 32 | `assets/images/cardapio/trufa-placeholder.png` |
-| Sem açúcar / diet | Cheesecake Proteico de Frutas Vermelhas | Fatia R$ 14 | `assets/images/cheesecake-placeholder.jpg` |
-| Sem açúcar / diet | Pavê Fit de Morango | Porção R$ 15 | `assets/images/cardapio/pave-morango-placeholder.jpg` |
-| Salgados fit | Mini Quiche de Legumes | Unidade R$ 8 / Caixa 6 R$ 42 | `assets/images/cardapio/quiche-placeholder.jpg` |
+| Bolos | Bolo de Milho Cremoso | Fatia R$ 12 / Inteiro R$ 62 | `assets/images/cardapio/bolo-milho-placeholder.jpg` |
+| Bolos | Bolo de Maracujá com Cobertura Leve | Fatia R$ 13 / Inteiro R$ 66 | `assets/images/cardapio/bolo-maracuja-placeholder.jpg` |
+| Bolos | Bolo de Laranja com Especiarias | Fatia R$ 12 / Inteiro R$ 62 | `assets/images/cardapio/bolo-laranja-placeholder.jpg` |
+| Brownies | Brownie Fit de Amêndoas | Unidade R$ 9 / Caixa 6 R$ 48 | `assets/images/brownie-placeholder.jpg` |
+| Brownies | Brownie de Doce de Leite | Unidade R$ 10 / Caixa 6 R$ 54 | `assets/images/cardapio/brownie-doce-de-leite-placeholder.jpg` |
+| Brownies | Brownie de Castanhas | Unidade R$ 10 / Caixa 6 R$ 54 | `assets/images/cardapio/brownie-castanhas-placeholder.jpg` |
+| Brownies | Brownie Leve de Coco | Unidade R$ 9 / Caixa 6 R$ 48 | `assets/images/cardapio/brownie-coco-placeholder.jpg` |
+| Brownies | Brownie Trio de Chocolates | Unidade R$ 11 / Caixa 6 R$ 60 | `assets/images/cardapio/brownie-trio-chocolates-placeholder.jpg` |
+| Brownies | Brownie de Pistache | Unidade R$ 11 / Caixa 6 R$ 60 | `assets/images/cardapio/brownie-pistache-placeholder.jpg` |
+| Bolachas | Cookies de Aveia e Castanhas | Unidade R$ 7 / Pacote 4 R$ 24 | `assets/images/cookies-placeholder.jpg` |
+| Bolachas | Bolacha de Especiarias | Pacote 4 R$ 14 | `assets/images/cardapio/bolacha-especiarias-placeholder.jpg` |
+| Bolachas | Biscoito de Cacau | Pacote 4 R$ 13 | `assets/images/cardapio/biscoito-cacau-placeholder.jpg` |
+| Bolachas | Biscoito de Coco | Pacote 4 R$ 13 | `assets/images/cardapio/biscoito-coco-placeholder.jpg` |
+| Bolachas | Cookie de Amendoim com Gotas de Chocolate | Unidade R$ 7 / Pacote 4 R$ 25 | `assets/images/cardapio/cookie-amendoim-placeholder.jpg` |
+| Bolachas | Bolacha de Aveia com Frutas Vermelhas | Pacote 4 R$ 15 | `assets/images/cardapio/bolacha-aveia-frutas-placeholder.jpg` |
+| Doces e Brigadeiros | Trufa de Cacau 70% com Castanha-do-Pará | Unidade R$ 6 / Caixa 6 R$ 32 | `assets/images/cardapio/trufa-placeholder.png` |
+| Doces e Brigadeiros | Brigadeiro Gourmet de Pistache | Unidade R$ 8 / Caixa 6 R$ 42 | `assets/images/cardapio/brigadeiro-pistache-placeholder.jpg` |
+| Doces e Brigadeiros | Brigadeiro de Ninho com Avelã | Unidade R$ 8 / Caixa 6 R$ 42 | `assets/images/cardapio/brigadeiro-avela-placeholder.jpg` |
+| Doces e Brigadeiros | Brigadeiro Trufado de Avelã Crocante | Unidade R$ 8 / Caixa 6 R$ 42 | `assets/images/cardapio/brigadeiro-avela-crocante-placeholder.jpg` |
+| Doces e Brigadeiros | Docinho de Coco Queimado | Unidade R$ 5 / Caixa 6 R$ 26 | `assets/images/cardapio/docinho-coco-placeholder.jpg` |
+| Doces e Brigadeiros | Bombom de Damasco com Castanhas | Unidade R$ 7 / Caixa 6 R$ 38 | `assets/images/cardapio/bombom-damasco-placeholder.jpg` |
+| Salgados | Mini Pão Sírio de Frango com Alface, Requeijão e Cenoura | Unidade R$ 8 / Caixa 6 R$ 42 | `assets/images/cardapio/pao-sirio-frango-placeholder.jpg` |
+| Salgados | Sanduíche Natural de Frango com Requeijão e Rúcula | Unidade R$ 12 | `assets/images/cardapio/sanduiche-natural-frango-placeholder.jpg` |
+| Salgados | Sanduíche Natural de Atum com Requeijão e Tomate | Unidade R$ 12 | `assets/images/cardapio/sanduiche-natural-atum-placeholder.jpg` |
 
-**Todos os produtos e preços acima são RASCUNHO/exemplo** — substituir pelos reais antes do lançamento (bloqueador registrado em `docs/TASKS.md`). Layout do PDF: fundo creme com moldura verde, selo circular no topo, aviso de rascunho em badge, categorias com regra verde, item = foto quadrada + nome + descrição + preço alinhado à direita, tudo em `Liberation Serif`, sem travessão, sem emoji, cabendo em 1 página A4.
+Seção adicional, **sem preço fixo em catálogo** (não faz parte da tabela de produtos acima, mas é um serviço real, não uma promessa futura): "Festas e Eventos" — bolos e docinhos personalizados para aniversários, casamentos e eventos empresariais. Deixa claro que a Belorae atende esse público, sob consulta de disponibilidade e valor (cada pedido é diferente, por isso não tem preço fixo). Renderizada no PDF como bloco com selo "SOB CONSULTA" (cor `--cor-primaria-escura`) e um link "Consultar disponibilidade pelo WhatsApp" (mesmo número/mensagem da seção 6.6).
+
+**Todos os produtos e preços acima são RASCUNHO/exemplo** — substituir pelos reais antes do lançamento (bloqueador registrado em `docs/TASKS.md`). Escopo definido a partir de referência de mercado (cardápio de uma confeitaria saudável concorrente), adaptado com nomes, descrições, preços e fotos próprios da Belorae — sem copiar texto do concorrente. Categorias "Sem açúcar / diet" e "Salgados fit" foram removidas desta rodada (cheesecake, pavê e mini quiche saíram do cardápio); salgados ficam para uma fase futura. Layout do PDF: fundo creme com moldura verde, selo circular no topo, aviso de rascunho em badge, categorias com regra verde, item = foto quadrada (quando disponível) + nome + descrição + preço alinhado à direita, tudo em `Liberation Serif`, sem travessão, sem emoji, cabendo em 1 página A4.
 
 ---
 
@@ -254,7 +276,8 @@ Regra geral pro Ricardo (vale pra esse rebuild e pra qualquer tarefa futura): an
 
 - Número de WhatsApp real: já definido (`5541996123682`).
 - Produtos, sabores e preços reais do cardápio (hoje é rascunho).
-- Fotos reais dos produtos (hoje são fotos de exemplo do banco Pexels).
+- Fotos reais dos produtos (hoje são fotos de exemplo de bancos de imagem gratuitos, todos os 27 itens já têm foto desde 2026-07-28).
+- Receitas reais para validar `docs/FICHA-TECNICA-PRODUTOS.md` (hoje é um template de referência, não testado na cozinha da Belorae).
 
 ## 14. Rastreabilidade
 

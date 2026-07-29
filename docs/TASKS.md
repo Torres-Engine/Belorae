@@ -10,8 +10,9 @@
 - [x] Confirmar nome oficial da marca (Belorae Confeitaria **Saudável**?)
 - [x] Trocar número de WhatsApp placeholder em `js/script.js` (linha com `NUMERO_WHATSAPP`)
 - [x] Gerar `assets/cardapio/cardapio-belorae.pdf` — versão RASCUNHO pronta, com fotos de exemplo, fonte serifada e layout de menu de verdade (conteúdo de exemplo, ver `docs/CARDAPIO-RASCUNHO.md`). Ainda falta substituir por produtos/preços/fotos reais.
-- [ ] Baixar as 4 fotos de exemplo que faltam pro cardápio (banana com canela, trufa, pavê, mini quiche) — URLs prontas, ver conversa/prompt do Ricardo
-- [ ] Substituir imagens de placeholder em `assets/images/` por fotos reais dos produtos
+- [x] Baixar fotos de exemplo para os itens do cardápio que ainda não têm foto — 2026-07-28: todos os 27 itens do PDF agora têm foto (banco de imagem gratuito). Ainda não são fotos reais da Belorae
+- [ ] Substituir imagens de placeholder em `assets/images/` e `assets/images/cardapio/` por fotos reais dos produtos — 2026-07-28: todas as 27 fotos do cardápio (site + PDF) foram trocadas por fotos de banco de imagens gratuito, melhores que antes mas ainda não são fotos da Belorae. Continua pendente até o dono do projeto enviar fotos próprias
+- [ ] Revisar `docs/FICHA-TECNICA-PRODUTOS.md` (template criado em 2026-07-28 por Vitor) com as receitas reais e preencher custo por unidade com a Patrícia
 - [x] Revisar todos os textos do `index.html` (nomes de produtos, descrições, preços de exemplo)
 - [x] Foto da Jaque (fundadora) para a seção "Sobre" — recebida e salva em `assets/images/jaque-sobre.jpg`
 
@@ -32,7 +33,7 @@
 ## Melhorias (não bloqueiam lançamento)
 
 - [x] Definir logo real — recebido e aplicado no header, footer e favicon
-- [ ] Ajustar paleta de cores em `css/style.css` (`:root`) se o logo pedir ajuste fino
+- [x] Ajustar paleta de cores em `css/style.css` (`:root`) se o logo pedir ajuste fino — 2026-07-28: `--cor-primaria-escura` alinhada à família de verde de `--cor-verde-marca`
 - [ ] Comprar/configurar domínio próprio
 - [ ] Adicionar Google Analytics
 - [ ] Testar em pelo menos 2 celulares diferentes antes de divulgar

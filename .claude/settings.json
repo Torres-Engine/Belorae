@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python3 --version)",
+      "PowerShell(Get-AppxPackage | Where-Object {$_.Name -match \"Python\"} | Select-Object Name, PackageFullName, InstallLocation; Get-ChildItem \"HKLM:\\\\SOFTWARE\\\\Python\" -ErrorAction SilentlyContinue; Get-ChildItem \"HKCU:\\\\SOFTWARE\\\\Python\" -ErrorAction SilentlyContinue; Get-Command reportlab -ErrorAction SilentlyContinue; Get-ChildItem Env:PATH | Format-List)",
+      "PowerShell(wsl -l -v; echo \"EXIT:$LASTEXITCODE\")",
+      "PowerShell(Get-Command magick -ErrorAction SilentlyContinue; try { Add-Type -AssemblyName System.Drawing -ErrorAction Stop; Write-Output \"System.Drawing OK\" } catch { Write-Output \"System.Drawing FAILED: $_\" })",
+      "WebFetch(domain:unsplash.com)"
+    ]
+  }
+}

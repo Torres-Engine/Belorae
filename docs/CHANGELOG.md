@@ -1,5 +1,98 @@
 # CHANGELOG.md
 
+## [1.15.0] — 2026-07-28 — Revisão de alegações de saúde, fotos em todo o cardápio e ficha técnica
+
+### Alterado (correção de risco legal/segurança alimentar)
+- Auditoria de conteúdo (Helena) encontrou uso amplo de "sem glúten", "sem lactose", "zero açúcar" e "vegano" no site e no PDF do cardápio, sem base técnica (sem laboratório, sem processo segregado, cozinha que também manipula trigo). Alegações específicas removidas ou suavizadas em `index.html` e `assets/cardapio/gerar_cardapio.py`; "sem açúcar refinado" foi mantida por ser mais defensável (desde que a receita real sustente)
+- Produto "Cookies Sem Glúten" renomeado para "Cookies de Aveia e Castanhas" (site, PDF e `docs/FICHA-TECNICA-PRODUTOS.md`)
+- Produto "Brownie Zero de Coco" renomeado para "Brownie Leve de Coco", descrição ajustada (sem alegação de "zero açúcar")
+- Frase "ingredientes naturais" (vaga, difícil de sustentar) trocada por linguagem de processo ("feito à mão, em pequenos lotes, com carinho") no meta description, hero e subtítulo do PDF
+- Novo aviso de alérgenos no rodapé do PDF do cardápio: cozinha artesanal que também manipula trigo, leite e oleaginosas, com recomendação de contato antes do pedido em caso de alergia/restrição
+- Seção Sobre reescrita (texto final do dono do projeto), tom mais afetuoso, mantendo as alegações de forma hedged ("priorizando receitas sem açúcar refinado e com opções voltadas a restrições alimentares", sem prometer ausência garantida de nada)
+
+### Adicionado
+- Fotos em todos os 27 itens do cardápio em PDF (antes só 9 tinham foto). Fotos de banco de imagem gratuito (Pexels), melhores que os placeholders anteriores mas ainda não são fotos reais da Belorae
+- `docs/FICHA-TECNICA-PRODUTOS.md`: ficha técnica de produção (template editável, por Vitor) para os 27 produtos do cardápio, com ingredientes, modo de preparo, rendimento, validade e alérgenos potenciais. Publicada como artifact para o dono do projeto revisar
+- `assets/cardapio/gerar_cardapio.py`: registro de fonte agora tem fallback para as fontes base do reportlab (Times-Bold/Times-Italic) quando o Liberation Serif do Linux não está instalado (necessário para gerar o PDF em ambiente Windows)
+
+### Notes
+- Nenhuma dessas mudanças foi feita para "esconder" nada: o objetivo é que o site prometa só o que a operação atual consegue sustentar com segurança, principalmente por causa do risco real de contaminação cruzada de glúten numa cozinha pequena que também vende pão sírio e sanduíche natural
+- Fotos seguem como pendência de fundo: quando a Belorae mandar fotos próprias, elas substituem as atuais (ver `docs/TASKS.md`)
+
+## [1.14.0] — 2026-07-28 — Fotos provisórias, ajuste de paleta, microinterações e cardápio para outro público
+
+### Adicionado
+- Botão flutuante "voltar ao topo" (canto inferior esquerdo, aparece só depois de rolar mais de uma tela de altura)
+- Barra fina de progresso de rolagem, fixa no topo da página
+- Animação de pulso contínuo nos botões flutuantes de WhatsApp e Instagram, para chamar mais atenção (respeita `prefers-reduced-motion`)
+- Seção "Festas e Eventos" ampliada para "Cardápio para Empresas, Festas e Eventos": passou a ter 3 blocos (Empresas, Festas Infantis, Casamentos e Eventos), voltada a quem não busca especificamente a linha fit/saudável
+- `js/script.js` deixou de estar vazio: agora tem o código da barra de progresso e do botão voltar ao topo
+
+### Alterado
+- Fotos placeholder de Bolo de Cenoura, Cookies e Brownie (usadas no hero e nos cards de produto) trocadas por fotos de banco de imagens gratuito (Unsplash/Pexels, licença livre para uso comercial), mais parecidas com os produtos reais, até a Belorae enviar fotos próprias. `object-position` dessas imagens reajustado no CSS para o novo enquadramento
+- `--cor-primaria-escura` ajustada de `#4F6647` para `#414B34` (mesma família de verde do `--cor-verde-marca` do header/cardápio, para os dois verdes do site combinarem melhor)
+
+### Documentação
+- `docs/TASKS.md`: fotos reais dos produtos seguem como pendência (fotos atuais são só uma melhoria temporária, não fotos da Belorae)
+
+### Notes
+- Pedido direto do dono do projeto. Fotos são um placeholder melhor, não fotos reais: quando a Belorae mandar fotos próprias, elas substituem estas
+- "Outro público" definido pelo dono do projeto como "quem não procura o fitness ou o saudável": empresas, eventos corporativos, festas infantis
+
+## [1.13.0] — 2026-07-26 — Correção: "Festas e Eventos" é serviço real, não planejamento futuro
+
+### Corrigido
+- O bloco "Festas e Eventos" do PDF dizia "EM PLANEJAMENTO", dando a entender que o serviço ainda não existia. Corrigido: a Belorae já atende esse público, só que sob consulta (cada pedido de festa/evento é diferente, sem preço fixo em catálogo)
+- Selo trocado de "EM PLANEJAMENTO" (laranja/acento) para "SOB CONSULTA" (verde escuro da marca)
+- Texto reescrito para deixar claro que o atendimento já existe, não que "está a caminho"
+- Adicionado link clicável "Consultar disponibilidade pelo WhatsApp" dentro do próprio bloco (antes não tinha nenhum jeito de agir a partir dali)
+
+### Documentação
+- `SPEC.md` seção 8 corrigida para descrever "Festas e Eventos" como serviço real sob consulta, não como item futuro
+
+## [1.12.0] — 2026-07-26 — Salgados de volta ao cardápio (2 itens)
+
+### Adicionado
+- Nova categoria "Salgados" no cardápio, com 2 itens (3 linhas): Mini Pão Sírio de Frango com Alface, Requeijão e Cenoura, e Sanduíche Natural em 2 sabores (Frango com Requeijão e Rúcula / Atum com Requeijão e Tomate)
+- `cardapio-belorae.pdf` regenerado (agora 3 páginas)
+
+### Documentação
+- `SPEC.md` seção 8 atualizada com os 3 itens de Salgados
+- `docs/TASKS.md`: lista de fotos pendentes inclui os 3 itens novos de Salgados
+
+### Notes
+- Motivo: o dono do projeto reconsiderou a decisão de não fazer salgados por enquanto (registrada em `docs/DECISIONS.md`, 2026-07-26) e pediu para incluir 2 itens específicos, para não perder esse público de cliente de vista
+
+## [1.11.0] — 2026-07-26 — Cardápio ampliado para 6 itens por categoria + seção Festas e Eventos
+
+### Adicionado
+- Cardápio ampliado de 10 para 24 itens: 6 por categoria (Bolos, Brownies, Bolachas, Doces e Brigadeiros)
+- Itens novos: Bolo de Milho Cremoso, Bolo de Maracujá com Cobertura Leve, Bolo de Laranja com Especiarias, Brownie de Castanhas, Brownie Zero de Coco, Brownie Trio de Chocolates, Brownie de Pistache, Biscoito de Cacau, Biscoito de Coco, Cookie de Amendoim com Gotas de Chocolate, Bolacha de Aveia com Frutas Vermelhas, Brigadeiro Trufado de Avelã Crocante, Docinho de Coco Queimado, Bombom de Damasco com Castanhas
+- Nova seção no PDF do cardápio: **Festas e Eventos**, com selo "EM PLANEJAMENTO" — sinaliza que bolos e docinhos personalizados para aniversários, casamentos e eventos empresariais estão a caminho, sem nenhum item à venda, preço ou prazo prometido ainda (flag de planejamento, não uma categoria de produto)
+- `cardapio-belorae.pdf` regenerado (agora com 2 páginas, ainda abaixo do limite de 5MB do RNF-05)
+
+### Documentação
+- `SPEC.md` seção 8 atualizada com os 24 itens e a explicação da seção Festas e Eventos
+- `docs/TASKS.md`: lista de fotos pendentes atualizada para os 21 itens sem foto ainda
+
+### Notes
+- Motivo: o dono do projeto pediu um cardápio mais completo (6 itens por categoria, inspirado na referência de mercado trazida antes) e quis sinalizar, sem vender nada ainda, que a Belorae também vai atender o público de festas e eventos, para não perder esse público de vista enquanto o cardápio do dia a dia é o foco atual
+
+## [1.10.0] — 2026-07-26 — Cardápio reestruturado (bolos, brownies, bolachas, doces e brigadeiros)
+
+### Alterado
+- `assets/cardapio/gerar_cardapio.py`: cardápio reorganizado em 4 categorias: Bolos, Brownies, Bolachas, Doces e Brigadeiros. Categorias "Sem açúcar / linha diet" e "Salgados fit" removidas desta rodada
+- Itens removidos do cardápio: Cheesecake Proteico de Frutas Vermelhas, Pavê Fit de Morango, Mini Quiche de Legumes (salgados ficam para uma fase futura, fora de escopo por enquanto)
+- Itens novos adicionados: Bolo de Chocolate com Amêndoas, Brownie de Doce de Leite, Bolacha de Especiarias, Brigadeiro Gourmet de Pistache, Brigadeiro de Ninho com Avelã
+- `cardapio-belorae.pdf` regenerado com a nova estrutura (itens sem foto ainda aparecem só com texto, mesmo comportamento de antes)
+
+### Documentação
+- `SPEC.md` seção 8 atualizada com a nova tabela de itens/categorias/preços/fotos
+- `docs/TASKS.md`: pendência de fotos atualizada para os itens novos; item de pavê/quiche removido (fora de escopo)
+
+### Notes
+- Motivo: o dono do projeto trouxe como referência de mercado o cardápio de uma confeitaria saudável concorrente e pediu para usar como inspiração, adaptando nomes, descrições, preços e fotos próprios da Belorae (sem copiar texto do concorrente), com escopo reduzido às categorias bolos, brownies, bolachas e doces/brigadeiros nesta fase, sem salgados
+
 ## [1.9.0] — 2026-07-26 — Redesign visual "v2.0 — Blocos e Cápsulas"
 
 ### Alterado
