@@ -1,5 +1,14 @@
 # CHANGELOG.md
 
+## [1.16.0] — 2026-07-29 — Remove bloco Festas e Eventos do PDF do cardápio
+
+### Removido
+- Bloco "Festas e Eventos" (selo "SOB CONSULTA" + texto + link "Consultar disponibilidade pelo WhatsApp") removido do PDF do cardápio, em `assets/cardapio/gerar_cardapio.py` (dicionário `FESTAS_EVENTOS` e a tabela que o renderizava)
+- PDF regenerado (`assets/cardapio/cardapio-belorae.pdf`); rodapé do PDF continua com o link "Fazer pedido pelo WhatsApp"
+
+### Notes
+- Pedido direto do dono do projeto. O site (`index.html`) não foi alterado nessa entrega
+
 ## [1.15.0] — 2026-07-28 — Revisão de alegações de saúde, fotos em todo o cardápio e ficha técnica
 
 ### Alterado (correção de risco legal/segurança alimentar)

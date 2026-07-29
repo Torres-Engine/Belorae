@@ -188,21 +188,6 @@ CARDAPIO = [
     ]),
 ]
 
-# Secao especial: sem itens de catalogo com preco fixo (por isso fica fora da
-# tabela CARDAPIO), mas e um servico que a Belorae ja atende de verdade.
-# Objetivo: deixar claro que esse publico (festas e eventos) e atendido,
-# e direcionar para contato via WhatsApp, ja que cada pedido e sob consulta.
-FESTAS_EVENTOS = {
-    "titulo": "Festas e Eventos",
-    "flag": "SOB CONSULTA",
-    "texto": (
-        "A Belorae também atende festas e eventos: bolos e docinhos personalizados "
-        "para aniversários, casamentos e eventos empresariais, sob consulta de "
-        "disponibilidade e valores conforme o pedido."
-    ),
-    "cta": "Consultar disponibilidade pelo WhatsApp",
-}
-
 def foto_quadrada(caminho_relativo, tamanho_px=300):
     """Recorta a imagem em quadrado central e devolve um flowable Image do reportlab.
     Se o arquivo nao existir ainda, devolve None (o item aparece so com texto)."""
@@ -312,42 +297,7 @@ def build():
             else:
                 story.append(Spacer(1, 2))
 
-    # Bloco "Festas e Eventos": servico real, sob consulta (sem preco fixo em catalogo)
     story.append(Spacer(1, 6))
-    festas_flag = Table(
-        [[Paragraph(FESTAS_EVENTOS["flag"], ParagraphStyle(
-            "FestasFlag", fontName=FONTE_BOLD, fontSize=8,
-            textColor=colors.HexColor("#FFFFFF"), alignment=TA_CENTER, leading=10))]],
-        colWidths=[32 * mm],
-    )
-    festas_flag.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, -1), VERDE_ESCURO),
-        ("TOPPADDING", (0, 0), (-1, -1), 3),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
-        ("LEFTPADDING", (0, 0), (-1, -1), 6),
-        ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-    ]))
-    festas_cta = Paragraph(
-        f'<link href="{LINK_WHATSAPP}"><u>{FESTAS_EVENTOS["cta"]}</u></link>',
-        ParagraphStyle("FestasCta", fontName=FONTE_BOLD, fontSize=9,
-            textColor=ACENTO, alignment=TA_LEFT, leading=12, spaceBefore=4),
-    )
-    festas_bloco = Table(
-        [[[Paragraph(FESTAS_EVENTOS["titulo"], categoria_style), festas_flag,
-           Spacer(1, 3), Paragraph(FESTAS_EVENTOS["texto"], desc_style),
-           festas_cta]]],
-        colWidths=[150 * mm],
-    )
-    festas_bloco.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, -1), BADGE_FUNDO),
-        ("TOPPADDING", (0, 0), (-1, -1), 10),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
-        ("LEFTPADDING", (0, 0), (-1, -1), 10),
-        ("RIGHTPADDING", (0, 0), (-1, -1), 10),
-    ]))
-    story.append(festas_bloco)
-
-    story.append(Spacer(1, 4))
     story.append(HRFlowable(width="100%", thickness=0.6, color=VERDE, spaceAfter=6))
     story.append(Paragraph(
         "Belorae Confeitaria Saudável. Rio Negro, PR. Atendemos Mafra e região. Pedidos via WhatsApp.",
