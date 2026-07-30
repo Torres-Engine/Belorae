@@ -20,7 +20,7 @@ de adicionar ao pedido).
 ## Bolos
 
 **Bolo Integral de Cenoura**
-Massa de cenoura com farinha integral, cobertura de chocolate 70% cacau. Sem açúcar refinado.
+Massa de cenoura com farinha integral, cobertura de chocolate 70% cacau.
 Fatia: R$ 12,00 | Inteiro (aprox. 12 fatias): R$ 65,00
 
 **Bolo Vegano de Banana com Canela**
@@ -38,13 +38,13 @@ Aveia, castanhas e gotas de chocolate meio amargo. Crocante por fora, macio por 
 Unidade: R$ 7,00 | Pacote com 4: R$ 24,00
 
 **Trufa de Cacau 70% com Castanha-do-Pará**
-Trufa pequena, cacau intenso, sem açúcar refinado.
+Trufa pequena, cacau intenso.
 Unidade: R$ 6,00 | Caixa com 6: R$ 32,00
 
 ## Sem açúcar / linha diet
 
 **Cheesecake Proteico de Frutas Vermelhas**
-Base de castanhas, recheio proteico, cobertura de frutas vermelhas frescas. Sem açúcar refinado.
+Base de castanhas, recheio proteico, cobertura de frutas vermelhas frescas.
 Fatia: R$ 14,00
 
 **Pavê Fit de Morango**

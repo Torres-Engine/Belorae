@@ -6,7 +6,7 @@ Converter visitantes em encomendas via WhatsApp para a Belorae Confeitaria Saud�
 
 ## Público
 
-Pessoas buscando doces/confeitaria com apelo saudável (sem glúten, sem açúcar refinado, fit, etc. — **ajustar conforme o real posicionamento dos produtos**), encontradas via Instagram/indicação, que acessam o link pelo celular.
+Pessoas buscando doces/confeitaria com apelo saudável (sem glúten quando possível, fit, etc. — **ajustar conforme o real posicionamento dos produtos**), encontradas via Instagram/indicação, que acessam o link pelo celular.
 
 ## Escopo — o que ESTÁ dentro
 

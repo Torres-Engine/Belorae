@@ -14,7 +14,7 @@
 
 ## 1. Visão Geral
 
-Site one-page cujo único objetivo é converter visitantes em pedidos via WhatsApp para a Belorae, uma confeitaria saudável (sem açúcar refinado, sem glúten quando possível) sediada em Rio Negro, PR, atendendo Mafra e região. Não é loja virtual: não há carrinho, checkout ou pagamento no site.
+Site one-page cujo único objetivo é converter visitantes em pedidos via WhatsApp para a Belorae, uma confeitaria saudável (fit, sem glúten quando possível) sediada em Rio Negro, PR, atendendo Mafra e região. Não é loja virtual: não há carrinho, checkout ou pagamento no site.
 
 **Métrica de sucesso:** visitante consegue, em até 2 cliques a partir do link do site, abrir uma conversa de WhatsApp com a Belorae já com intenção de pedido clara.
 

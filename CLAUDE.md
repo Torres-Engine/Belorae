@@ -1,7 +1,7 @@
 # CLAUDE.md — Contexto do Projeto
 
 > Este arquivo é lido automaticamente pela extensão Claude Code no VS Code.
-> Atualizado: 2026-07-26 — Rebuild v1.0.0 publicado, documentação fechada em v1.2.0, simplificação de CTAs em v1.3.0, reversão parcial (WhatsApp no rodapé) em v1.5.0, segunda reversão parcial (botão "Fazer Pedido" no cardápio) em v1.6.0, ícones viram botões flutuantes fixos em v1.7.0, redesign visual "v2.0 — Blocos e Cápsulas" em v1.9.0
+> Atualizado: 2026-07-30 — Rebuild v1.0.0 publicado, documentação fechada em v1.2.0, simplificação de CTAs em v1.3.0, reversão parcial (WhatsApp no rodapé) em v1.5.0, segunda reversão parcial (botão "Fazer Pedido" no cardápio) em v1.6.0, ícones viram botões flutuantes fixos em v1.7.0, redesign visual "v2.0 — Blocos e Cápsulas" em v1.9.0, alegação "sem açúcar refinado" removida do site e do cardápio em v1.17.0
 
 ## Status Atual
 
@@ -18,6 +18,7 @@
 - ✅ v1.6.0: segunda reversão parcial. A seção Cardápio ganhou o botão "Fazer Pedido" ao lado do botão "Ver Cardápio" (os dois convivem, lado a lado), e o ícone de Instagram do rodapé passou a usar o gradiente oficial da marca em vez do contorno verde da Belorae. Site não tem mais "único botão" (ver `docs/CHANGELOG.md` e `docs/DECISIONS.md`)
 - ✅ v1.7.0: os ícones de WhatsApp e Instagram saíram do rodapé e viraram botões flutuantes fixos no canto inferior direito da tela, visíveis durante toda a rolagem da página. O rodapé agora só tem logo, nome da marca e localização. Ícone da logo do rodapé aumentado de 1.5rem para 1.75rem (ver `docs/CHANGELOG.md` e `docs/DECISIONS.md`)
 - ✅ v1.9.0: redesign visual "v2.0 — Blocos e Cápsulas" (direção de Sofia, implementado por Camila). O sistema visual mudou de "faixas empilhadas" para "blocos arredondados sobre fundo creme": header virou cápsula sólida verde flutuante e sticky (nova cor `--cor-verde-marca`, logo trocado para a versão de fundo verde), hero ganhou foto grande com chips flutuantes (Cookies e Brownie), cartões de produto viraram horizontais em mobile, seção Sobre ganhou bloco de fundo suave com moldura na foto da Jaque, seção Cardápio virou painel de cor sólida (era gradiente) com glifo decorativo, rodapé virou bloco marrom com 2 colunas (marca + nova coluna "Navegação"), e os botões flutuantes de WhatsApp/Instagram passaram a ficar dentro de uma única cápsula creme. Nenhuma cor oficial da paleta foi redefinida (só tokens novos adicionados) e nenhum link de contato mudou de destino ou comportamento. Correção de contraste no botão "Fazer Pedido" incluída na mesma entrega (ver `docs/CHANGELOG.md` e `docs/DECISIONS.md`)
+- ✅ v1.17.0: alegação "sem açúcar refinado" removida de todo o site (meta description, hero, chip do brownie, card do Bolo de Cenoura, seção Sobre) e de todas as 13 descrições de produto no gerador do PDF do cardápio (`assets/cardapio/gerar_cardapio.py`), com PDF regenerado. Pedido direto do dono do projeto: ele não tem como comprovar essa alegação hoje (a ficha técnica já indicava açúcar demerara/mascavo em várias receitas). Nenhum outro texto, preço ou link mudou (ver `docs/CHANGELOG.md`)
 
 ## Fonte única da verdade
 

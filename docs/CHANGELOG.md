@@ -1,5 +1,14 @@
 # CHANGELOG.md
 
+## [1.17.0] — 2026-07-30 — Remove alegação "sem açúcar refinado" (risco legal)
+
+### Removido (correção de risco legal)
+- Alegação "sem açúcar refinado" removida de todo o site e do cardápio: meta description, hero, chip do brownie no hero, card do Bolo Integral de Cenoura e seção Sobre em `index.html`; todas as 13 ocorrências nas descrições de produto em `assets/cardapio/gerar_cardapio.py`; PDF regenerado (`assets/cardapio/cardapio-belorae.pdf`)
+- Trechos correspondentes também corrigidos em `SPEC.md`, `docs/PROJECT_SCOPE.md` e `docs/CARDAPIO-RASCUNHO.md`
+
+### Notes
+- Pedido direto do dono do projeto: ele não tem como comprovar que os produtos são de fato sem açúcar refinado (a ficha técnica em `docs/FICHA-TECNICA-PRODUTOS.md` já indicava açúcar demerara/mascavo em várias receitas, que não é a mesma coisa), então a alegação foi cortada em vez de reformulada. Nenhum outro texto, preço ou link foi alterado
+
 ## [1.16.0] — 2026-07-29 — Remove bloco Festas e Eventos do PDF do cardápio
 
 ### Removido
